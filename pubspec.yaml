@@ -31,6 +31,8 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  flutter_svg: ^1.0.3
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -76,6 +78,12 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
+    - family:  Progress
+      fonts:
+         - asset: fonts/Progress.ttf
+    - family: Building
+      fonts:
+         - asset: fonts/Building.ttf
     - family: Bebas
       fonts:
          - asset: fonts\Bebas-Regular.ttf
@@ -84,7 +92,12 @@ flutter:
       fonts:
          - asset: fonts/Cabin/Cabin-Regular.ttf
          - asset: fonts/Cabin/static/Cabin/Cabin-SemiBold.ttf
+         - asset: fonts/Cabin/Cabin-Bold.ttf
            style: normal
+
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  assets:
+    - assets/
+    - assets/icons/

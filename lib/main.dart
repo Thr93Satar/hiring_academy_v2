@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Hiring Academy',
       theme: ThemeData(
         fontFamily: 'Cabin',
-        primarySwatch: Colors.deepPurple,
+        scaffoldBackgroundColor: bodycolor,
       ),
       initialRoute: '/',
       routes: {
@@ -54,9 +54,36 @@ Map<int, Color> color = {
   800: const Color.fromRGBO(72, 61, 103,  .9),
   900: const Color.fromRGBO(72, 61, 103,  1),
 };
+MaterialColor bodycolor = MaterialColor(0xFF483D67, color);
 
-MaterialColor themecolor = MaterialColor(0xFF551A8B, color);
+Map<int, Color> color1 = {
+  50: const Color.fromRGBO(108, 90, 170, .1),
+  100: const Color.fromRGBO(108, 90, 170,  .2),
+  200: const Color.fromRGBO(108, 90, 170,  .3),
+  300: const Color.fromRGBO(108, 90, 170, .4),
+  400: const Color.fromRGBO(108, 90, 170,  .5),
+  500: const Color.fromRGBO(108, 90, 170,  .6),
+  600: const Color.fromRGBO(108, 90, 170,  .7),
+  700: const Color.fromRGBO(108, 90, 170,  .8),
+  800: const Color.fromRGBO(108, 90, 170, .9),
+  900: const Color.fromRGBO(108, 90, 170,  1),
+};
+MaterialColor themecolor = MaterialColor(0xFF6C5AAA, color1);
 
+Map<int, Color> color2 = {
+  50: const Color.fromRGBO(211, 206, 230, .1),
+  100: const Color.fromRGBO(211, 206, 230,  .2),
+  200: const Color.fromRGBO(211, 206, 230,  .3),
+  300: const Color.fromRGBO(211, 206, 230, .4),
+  400: const Color.fromRGBO(211, 206, 230,  .5),
+  500: const Color.fromRGBO(211, 206, 230,  .6),
+  600: const Color.fromRGBO(211, 206, 230,  .7),
+  700: const Color.fromRGBO(211, 206, 230,  .8),
+  800: const Color.fromRGBO(211, 206, 230, .9),
+  900: const Color.fromRGBO(211, 206, 230,  1),
+};
+
+MaterialColor elementcolor = MaterialColor(0xFFD3CEE6, color2);
 // -------------------------------------Color Swatch----------------------------
 
 
