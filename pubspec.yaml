@@ -32,6 +32,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_svg: ^1.0.3
+  material_design_icons_flutter: ^5.0.6595
 
 
 
@@ -99,5 +100,4 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
-    - assets/
-    - assets/icons/
+    - assets/images/
