@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 // -------------------------------------------App-Main-Pages-----------------------
-import 'Home.dart';
+import 'home.dart';
 import 'Login.dart';
 
 void main() {
