@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hiring_academy_v2/job_finder.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 // -------------------------------------------App-Main-Pages-----------------------
 import 'home.dart';
