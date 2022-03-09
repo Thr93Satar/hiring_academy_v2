@@ -68,7 +68,7 @@ class _HomeState extends State<Home> {
                                             Colors.deepPurple.shade500,
                                           ),
                                         ),
-                                        child: Text('See All')),
+                                        child: const Text('See All')),
                                   )
                                 ]),
                           )),
@@ -535,7 +535,7 @@ class _HomeState extends State<Home> {
                                               Colors.deepPurple.shade500,
                                             ),
                                           ),
-                                          child: Text('See All')),
+                                          child: const Text('See All')),
                                     )
                                   ]),
                             ),
@@ -1480,8 +1480,8 @@ class _HomeState extends State<Home> {
           height: 5,
         ),
       ],
-    ),
-    Jobs(),
+    ), //------------------Home-------------------
+    const Jobs(),
     // Company(),
     // Progression(),
     // More(),
@@ -1490,110 +1490,109 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: themecolor,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(20),
-          ),
-        ),
-        title: const Text(
-          'Hiring Academy',
-          style: TextStyle(fontFamily: 'Cabin', fontWeight: FontWeight.bold),
-        ),
-        leading: IconButton(
-          icon: const Icon(
-            Icons.notifications_none,
-            size: 25,
-          ),
-          onPressed: () {
-            Navigator.pushNamed(context, '/login');
-            print('This is Notification page');
-          },
-        ),
-        actions: [
-          IconButton(
-              onPressed: () {
-                print('Hii i am your account');
-              },
-              icon: const Icon(
-                Icons.account_circle,
-                size: 25,
-              ))
-        ],
-      ),
-      bottomNavigationBar: Theme(
-        data: Theme.of(context).copyWith(
-          // sets the background color of the `BottomNavigationBar`
-          canvasColor: elementcolor,
-        ),
-        child: BottomNavigationBar(
-          // type: BottomNavigationBarType.fixed,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          elevation: 20,
-          iconSize: 10,
-          items: [
-            BottomNavigationBarItem(
-              label: 'Home',
-              icon: CircleAvatar(
-                  maxRadius: 16,
-                  minRadius: 15,
-                  backgroundColor: Colors.deepPurple.shade500,
-                  child: const Icon(
-                    Icons.cottage_rounded,
-                    color: Colors.white,
-                  )),
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: themecolor,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(20),
             ),
-            BottomNavigationBarItem(
-                label: 'Work',
+          ),
+          title: const Text(
+            'Hiring Academy',
+            style: TextStyle(fontFamily: 'Cabin', fontWeight: FontWeight.bold),
+          ),
+          leading: IconButton(
+            icon: const Icon(
+              Icons.notifications_none,
+              size: 25,
+            ),
+            onPressed: () {
+              print('This is Notification page');
+            },
+          ),
+          actions: [
+             IconButton(
+                icon: const Icon(
+                  Icons.account_circle,
+                  size: 25,
+                ),
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/login');
+                }
+             )],
+              ),
+        bottomNavigationBar: Theme(
+          data: Theme.of(context).copyWith(
+            // sets the background color of the `BottomNavigationBar`
+            canvasColor: elementcolor,
+          ),
+          child: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            elevation: 20,
+            iconSize: 10,
+            items: [
+              BottomNavigationBarItem(
+                label: 'Home',
                 icon: CircleAvatar(
                     maxRadius: 16,
                     minRadius: 15,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.work,
-                      color: Colors.deepPurple.shade500,
-                    ))),
-            BottomNavigationBarItem(
-                label: 'Company',
-                icon: CircleAvatar(
-                    maxRadius: 16,
-                    minRadius: 15,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.apartment_rounded,
-                      color: Colors.deepPurple.shade500,
-                    ))),
-            BottomNavigationBarItem(
-                label: 'Progression',
-                icon: CircleAvatar(
-                    maxRadius: 16,
-                    minRadius: 15,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.donut_small_rounded,
-                      color: Colors.deepPurple.shade500,
-                    ))),
-            BottomNavigationBarItem(
-                label: 'More',
-                icon: CircleAvatar(
-                    maxRadius: 16,
-                    minRadius: 15,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.more_horiz,
-                      color: Colors.deepPurple.shade500,
-                    ))),
-          ],
-          onTap: (index){
-            setState(() {
-              selectedPage = index;
-            });
-          },
+                    backgroundColor: Colors.deepPurple.shade500,
+                    child: const Icon(
+                      Icons.cottage_rounded,
+                      color: Colors.white,
+                    )),
+              ),
+              BottomNavigationBarItem(
+                  label: 'Work',
+                  icon: CircleAvatar(
+                      maxRadius: 16,
+                      minRadius: 15,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.work,
+                        color: Colors.deepPurple.shade500,
+                      ))),
+              BottomNavigationBarItem(
+                  label: 'Company',
+                  icon: CircleAvatar(
+                      maxRadius: 16,
+                      minRadius: 15,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.apartment_rounded,
+                        color: Colors.deepPurple.shade500,
+                      ))),
+              BottomNavigationBarItem(
+                  label: 'Progression',
+                  icon: CircleAvatar(
+                      maxRadius: 16,
+                      minRadius: 15,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.donut_small_rounded,
+                        color: Colors.deepPurple.shade500,
+                      ))),
+              BottomNavigationBarItem(
+                  label: 'More',
+                  icon: CircleAvatar(
+                      maxRadius: 16,
+                      minRadius: 15,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.more_horiz,
+                        color: Colors.deepPurple.shade500,
+                      ))),
+            ],
+            onTap: (index) {
+              setState(() {
+                selectedPage = index;
+              });
+            },
+          ),
         ),
-      ),
-      body: page_selection[selectedPage]
-    );
+        body: page_selection[selectedPage]);
   }
 }
