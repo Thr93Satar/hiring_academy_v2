@@ -80,12 +80,6 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family:  Progress
-      fonts:
-         - asset: fonts/Progress.ttf
-    - family: Building
-      fonts:
-         - asset: fonts/Building.ttf
     - family: Bebas
       fonts:
          - asset: fonts\Bebas-Regular.ttf

@@ -1518,7 +1518,7 @@ class _HomeState extends State<Home> {
                   size: 25,
                 ),
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/login');
+                  Navigator.pushNamed(context, '/login');
                 }
              )],
               ),
