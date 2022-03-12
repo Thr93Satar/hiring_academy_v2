@@ -1,17 +1,19 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hiring_academy_v2/home.dart';
 import 'package:hiring_academy_v2/job_finder.dart';
 import 'package:hiring_academy_v2/main.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class HomeSI extends StatefulWidget {
+  const HomeSI({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<HomeSI> createState() => _HomeSIState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeSIState extends State<HomeSI> {
   int selectedPage = 0;
 
   final page_selection = [
@@ -1441,12 +1443,24 @@ class _HomeState extends State<Home> {
                                 const BorderRadius.all(Radius.circular(10.0)),
                             color: Colors.white60,
                           ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children:[ Text('Oops ... There are no activities',textAlign: TextAlign.center,),
-                              ]
-                          ),
+                          child: ListView.separated(
+                              scrollDirection: Axis.vertical,
+                              itemCount: 20,
+                              separatorBuilder:
+                                  (BuildContext context, int index) {
+                                return const Divider(
+                                  thickness: 1,
+                                  indent: 4,
+                                  endIndent: 4,
+                                  color: Colors.grey,
+                                );
+                              },
+                              itemBuilder: (BuildContext context, int index) {
+                                return const Text(
+                                  'Application Submitted for Interaction Designer',
+                                  textAlign: TextAlign.center,
+                                );
+                              }),
                         ),
                       ),
                       const SizedBox(
@@ -1500,16 +1514,83 @@ class _HomeState extends State<Home> {
             },
           ),
           actions: [
-             IconButton(
-                icon: const Icon(
-                  Icons.account_circle,
-                  size: 25,
+            Builder(builder: (context){
+              return InkWell(
+                onTap: (){
+                  Scaffold.of(context).openEndDrawer();
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: CircleAvatar(
+                    radius: 20,
+                    child: SvgPicture.asset('assets/images/user-svgrepo-com.svg'),
+                  ),
                 ),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/login');
-                }
-             )],
+              );
+            }),
+          ],
+        ),
+      endDrawer: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const SizedBox(
+            height: 40,
+          ),
+          SizedBox(
+            height: 550,
+            width: 240,
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(topLeft: Radius.circular(65), bottomLeft: Radius.circular(5)),
+              child: Drawer(
+                backgroundColor: Colors.purple.shade50,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 200,
+                      width: 400,
+                      child: Image.asset('assets/images/sunset-g56e10e155_1920.jpg',fit: BoxFit.cover,),
+                    ),
+                    Expanded(
+                      child: ListView(
+                        children: [
+                          InkWell(
+                            onTap: (){print('hii');},
+                            child: const ListTile(
+                              title: Text('Edit you Account',textAlign: TextAlign.end,),
+                              dense: true,
+                              trailing: Icon(Icons.edit),
+                            ),
+                          ),
+                          const InkWell(
+                            child: ListTile(
+                              title:  Text('Mail',textAlign: TextAlign.end,),
+                              trailing: Icon(Icons.mail),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(top: 140.0),
+                            child: const Divider(),
+                          ),
+                           InkWell(
+                            onTap: (){
+                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => Home()));
+                              },
+                            child: ListTile (
+                              title: Text('Log-out',textAlign: TextAlign.end,),
+                              trailing: Icon(MdiIcons.logout),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
+            ),
+          ),
+          ],
+        ),
         bottomNavigationBar: Theme(
           data: Theme.of(context).copyWith(
             // sets the background color of the `BottomNavigationBar`

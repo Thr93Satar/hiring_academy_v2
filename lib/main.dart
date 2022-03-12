@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hiring_academy_v2/home_signed_in.dart';
 // -------------------------------------------App-Main-Pages-----------------------
 import 'home.dart';
 import 'login.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const Home(),
         '/login': (context) => const Login(),
+        '/home_signed_in': (context) => const HomeSI(),
       },
       locale: const Locale('en'),
       localizationsDelegates: const [

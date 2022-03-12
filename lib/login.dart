@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hiring_academy_v2/home_signed_in.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'main.dart';
 
@@ -52,14 +53,16 @@ class _LoginState extends State<Login> {
                     Padding(
                       padding: const EdgeInsets.only(top: 185.5),
                       child: SizedBox(
-                        height: 420,
+                        height: 400,
                         width: 360,
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: const BorderRadius.only(
-                                topRight: Radius.circular(60),
-                                topLeft: Radius.circular(60),
-                                ),
+                              topRight: Radius.circular(60),
+                              topLeft: Radius.circular(60),
+                              bottomLeft: Radius.circular(30),
+                              bottomRight: Radius.circular(30),
+                            ),
                             boxShadow: const [
                               BoxShadow(
                                 color: Colors.black,
@@ -71,16 +74,16 @@ class _LoginState extends State<Login> {
                             color: Colors.purple.shade50,
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(40.0),
+                            padding: const EdgeInsets.all(35.0),
                             child: Column(
                               children: [
                                 const Padding(
-                                  padding: const EdgeInsets.only(bottom: 15.0),
-                                  child: const SizedBox(
+                                  padding: EdgeInsets.only(bottom: 15.0),
+                                  child: SizedBox(
                                     height: 30,
                                     width: 360,
-                                    child: const Text(
-                                      'Sign-In',
+                                    child: Text(
+                                      'Sign-In :',
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
                                         color: Colors.deepPurple,
@@ -116,16 +119,136 @@ class _LoginState extends State<Login> {
                                       MdiIcons.formTextboxPassword,
                                       color: Colors.deepPurple,
                                     ),
-                                    border: const OutlineInputBorder(),
+                                    border: OutlineInputBorder(),
                                     labelText: 'Password',
                                   ),
                                 ),
-                                Row(
-                                  children: const [
-                                    InkWell(
-                                      child: Text('Forgot password ?'),
-                                    )
-                                  ],
+                                Expanded(
+                                  child: Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Expanded(
+                                        child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    top: 14.0),
+                                                child: InkWell(
+                                                  onTap: () {
+                                                    print(
+                                                        'this is forgot password page');
+                                                  },
+                                                  child: const Text(
+                                                    'Forgot password ?',
+                                                    style: TextStyle(
+                                                      fontFamily: 'Cabin',
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    top: 14.0),
+                                                child: InkWell(
+                                                  onTap: () {
+                                                    print(
+                                                        'this is recover account page');
+                                                  },
+                                                  child: const Text(
+                                                    'Recover Account ?',
+                                                    style: TextStyle(
+                                                      fontFamily: 'Cabin',
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ]),
+                                      ),
+                                      Expanded(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.end,
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 30.0,),
+                                                  child: ElevatedButton(
+                                                    onPressed: () {
+                                                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => HomeSI()));
+                                                    },
+                                                    child: const Icon(Icons
+                                                        .arrow_forward_rounded),
+                                                    style: ElevatedButton
+                                                        .styleFrom(
+                                                      primary:
+                                                          Colors.deepPurple,
+                                                      shape:
+                                                          const CircleBorder(),
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              16),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 35.0),
+                                    child: Row(
+                                      children: [
+                                        const InkWell(
+                                            child: Text(
+                                          'Don\'t have an account yet ?',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        )),
+                                        const SizedBox(
+                                          width: 20,
+                                        ),
+                                        ElevatedButton(
+                                            style: ButtonStyle(
+                                              backgroundColor:
+                                                  MaterialStateProperty
+                                                      .resolveWith((states) =>
+                                                          Colors.deepPurple),
+                                              fixedSize: MaterialStateProperty
+                                                  .resolveWith((states) =>
+                                                      const Size(80.0, 40.0)),
+                                            ),
+                                            onPressed: () {
+                                              print('go to create account page');
+                                            },
+                                            child: const Text(
+                                              'Register',
+                                              style: TextStyle(
+                                                  fontSize: 14),
+                                            ))
+                                      ],
+                                    ),
+                                  ),
                                 )
                               ],
                             ),
