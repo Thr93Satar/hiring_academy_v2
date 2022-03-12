@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:hiring_academy_v2/job_finder.dart';
 import 'package:hiring_academy_v2/main.dart';
+import 'package:hiring_academy_v2/news.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class Home extends StatefulWidget {
@@ -89,7 +90,9 @@ class _HomeState extends State<Home> {
                                   children: [
                                     InkWell(
                                       splashColor: Colors.white,
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => News()));
+                                      },
                                       child: Stack(
                                           alignment:
                                               AlignmentDirectional.bottomCenter,
@@ -156,7 +159,9 @@ class _HomeState extends State<Home> {
                                   children: [
                                     InkWell(
                                       splashColor: Colors.white,
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => News()));
+                                      },
                                       child: Stack(
                                           alignment:
                                               AlignmentDirectional.bottomCenter,

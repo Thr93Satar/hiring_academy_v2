@@ -255,7 +255,7 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                       ),
-                    ),
+                    ), //-------------------------------- Main Sign in part-------------------------
                     Padding(
                       padding: const EdgeInsets.only(left: 30.0),
                       child: SizedBox(
@@ -266,7 +266,7 @@ class _LoginState extends State<Login> {
                           fit: BoxFit.cover,
                         ),
                       ),
-                    ),
+                    ), //--------------------------------Illustration part ------------------------
                   ],
                 ),
               ],

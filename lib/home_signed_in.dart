@@ -1574,7 +1574,7 @@ class _HomeSIState extends State<HomeSI> {
                           ),
                            InkWell(
                             onTap: (){
-                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => Home()));
+                              Navigator.pushNamed(context, 'news');
                               },
                             child: ListTile (
                               title: Text('Log-out',textAlign: TextAlign.end,),
