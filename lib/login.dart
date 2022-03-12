@@ -29,6 +29,7 @@ class _LoginState extends State<Login> {
           ),
         ),
       ),
+
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -53,15 +54,14 @@ class _LoginState extends State<Login> {
                     Padding(
                       padding: const EdgeInsets.only(top: 185.5),
                       child: SizedBox(
-                        height: 400,
+                        height: 425,
                         width: 360,
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: const BorderRadius.only(
-                              topRight: Radius.circular(60),
-                              topLeft: Radius.circular(60),
-                              bottomLeft: Radius.circular(30),
-                              bottomRight: Radius.circular(30),
+                              topRight: Radius.circular(30),
+                              topLeft: Radius.circular(30),
+
                             ),
                             boxShadow: const [
                               BoxShadow(
@@ -74,7 +74,7 @@ class _LoginState extends State<Login> {
                             color: Colors.purple.shade50,
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(35.0),
+                            padding: const EdgeInsets.only(left: 35.0,right: 35.0,top: 25),
                             child: Column(
                               children: [
                                 const Padding(
@@ -176,7 +176,7 @@ class _LoginState extends State<Login> {
                                       Expanded(
                                         child: Column(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                              MainAxisAlignment.start,
                                           children: [
                                             Row(
                                               mainAxisAlignment:
@@ -185,7 +185,7 @@ class _LoginState extends State<Login> {
                                                 Padding(
                                                   padding:
                                                       const EdgeInsets.only(
-                                                          left: 30.0,),
+                                                          left: 30.0,top: 10,),
                                                   child: ElevatedButton(
                                                     onPressed: () {
                                                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => HomeSI()));
@@ -214,7 +214,7 @@ class _LoginState extends State<Login> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsets.only(top: 35.0),
+                                    padding: const EdgeInsets.only(top: 10.0),
                                     child: Row(
                                       children: [
                                         const InkWell(

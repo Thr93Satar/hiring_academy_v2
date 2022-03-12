@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hiring_academy_v2/login.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import 'main.dart';
@@ -41,7 +40,7 @@ class _NewsState extends State<News> {
       ),
       body: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           SizedBox(

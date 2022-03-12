@@ -1484,7 +1484,7 @@ class _HomeState extends State<Home> {
           ),
         ],
       ), //------------------Home-------------------
-      const Jobs(),
+      Jobs(), //------------------Jobs-------------------
       // Company(),
       // Progression(),
       // More(),
