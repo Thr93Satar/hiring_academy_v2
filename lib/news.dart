@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hiring_academy_v2/login.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import 'main.dart';
 
@@ -37,6 +38,65 @@ class _NewsState extends State<News> {
                 Navigator.pushNamed(context, '/login');
               }
           )],
+      ),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 10,
+          ),
+          SizedBox(
+            height: 610,
+            width: 340,
+            child: Container(
+              margin: EdgeInsets.only(left: 20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+              color: Colors.purple.shade50,
+             ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 50,
+                    width: 360,
+                    child:  Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(topLeft: Radius.circular(20)),
+                          color: themecolor,
+                        ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: const [
+                              Text('What\'s New',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Icon(MdiIcons.newspaperVariantMultipleOutline,size: 25,color: Colors.white,),
+                            ],
+                          ),
+                      ),
+                    ),
+                    ),
+                  SizedBox(
+                    height: 200,
+                    width: 340,
+                    child: Container(
+                      color: Colors.red,
+                    ),
+                  )
+                ],
+              )
+            ),
+          )
+        ],
       ),
     );
   }
