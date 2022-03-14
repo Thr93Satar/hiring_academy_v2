@@ -47,9 +47,9 @@ class _NewsState extends State<News> {
             height: 610,
             width: 340,
             child: Container(
-              margin: EdgeInsets.only(left: 20),
+              margin: const EdgeInsets.only(left: 20),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
+                borderRadius: const BorderRadius.all(Radius.circular(20)),
               color: Colors.purple.shade50,
              ),
               child: Column(
@@ -60,7 +60,7 @@ class _NewsState extends State<News> {
                     width: 360,
                     child:  Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(topLeft: Radius.circular(20)),
+                          borderRadius: const BorderRadius.vertical(top: Radius.circular(10)),
                           color: themecolor,
                         ),
                       child: Padding(
@@ -84,13 +84,122 @@ class _NewsState extends State<News> {
                       ),
                     ),
                     ),
-                  SizedBox(
-                    height: 200,
-                    width: 340,
-                    child: Container(
-                      color: Colors.red,
+                  Stack(
+                    children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 200.0),
+                    child: SizedBox(
+                      height: 50,
+                      width: 360,
+                      child:  Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
+                          color: themecolor,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: const [
+                              Text('Life of the Videographer',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontFamily: 'Cabin',
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
-                  )
+                  ),
+                      SizedBox(
+                        height: 200,
+                        width: 340,
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black,
+                                spreadRadius: -2,
+                                blurRadius: 8,
+                                offset: Offset(0.0,2),
+                              ),
+                            ],
+                            color: Colors.red,
+                          ),
+                          child: Image.asset('assets/images/pexels-brett-sayles-1426044.png',fit: BoxFit.cover,),
+                        ),
+                      ),
+                    ]
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  SizedBox(
+                    height: 240,
+                    width: 310,
+                    child: Container(
+                      margin: const EdgeInsets.only(left: 10),
+                      decoration:BoxDecoration(
+                      borderRadius:const BorderRadius.all(Radius.circular(10)),
+                      color: themecolor,
+                      ),
+                      child: const SingleChildScrollView(
+                        child:  Padding(
+                          padding: EdgeInsets.all(14.0),
+                          child: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. '
+                              'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,'
+                              ' when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n'
+                              'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. '
+                              'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, '
+                              'and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum\'Lorem Ipsum is simply dummy text of the printing '
+                              'and typesetting industry. \n'
+                              'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,'
+                              ' when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n'
+                              'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. '
+                              'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, '
+                              'and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                              wordSpacing: -1,
+                            color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'Cabin',
+                              fontSize: 16,
+                              overflow: TextOverflow.fade,
+                              height: 1.5,
+                          ),),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50,
+                    width: 300,
+                    child: Row(
+                      children: [
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        TextButton(
+                          onPressed: (){},
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text('Share', style: TextStyle(fontSize: 16,color: themecolor,),),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 2.0, left: 2.0),
+                                child: Icon(Icons.share,color: themecolor,),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ]
+                    ),
+                  ),
                 ],
               )
             ),

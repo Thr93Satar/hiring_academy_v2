@@ -5,6 +5,7 @@ import 'package:hiring_academy_v2/news.dart';
 // -------------------------------------------App-Main-Pages-----------------------
 import 'home.dart';
 import 'login.dart';
+import 'more_news.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const Login(),
         '/home_signed_in': (context) => const HomeSI(),
         '/news': (context) => const News(),
+        '/more_news': (context) => const MoreN(),
       },
       locale: const Locale('en'),
       localizationsDelegates: const [

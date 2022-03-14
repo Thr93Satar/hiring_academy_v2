@@ -64,7 +64,9 @@ class _HomeState extends State<Home> {
                                     Padding(
                                       padding: const EdgeInsets.only(top: 15.0),
                                       child: ElevatedButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.pushNamed(context, '/more_news');
+                                          },
                                           style: ButtonStyle(
                                             backgroundColor:
                                             MaterialStateProperty.all<Color>(
