@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hiring_academy_v2/home_signed_in.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'main.dart';
+
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -15,6 +15,7 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -95,6 +96,7 @@ class _LoginState extends State<Login> {
                                   ),
                                 ),
                                 const TextField(
+
                                   obscureText: true,
                                   decoration: InputDecoration(
                                     suffixIcon: Icon(
@@ -138,8 +140,7 @@ class _LoginState extends State<Login> {
                                                     top: 14.0),
                                                 child: InkWell(
                                                   onTap: () {
-                                                    print(
-                                                        'this is forgot password page');
+                                                    Navigator.pushNamed(context, '/forgot_password');
                                                   },
                                                   child: const Text(
                                                     'Forgot password ?',

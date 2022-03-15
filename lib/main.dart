@@ -4,7 +4,8 @@ import 'package:hiring_academy_v2/event.dart';
 import 'package:hiring_academy_v2/home_signed_in.dart';
 import 'package:hiring_academy_v2/more_events.dart';
 import 'package:hiring_academy_v2/news.dart';
-// -------------------------------------------App-Main-Pages-----------------------
+// -------------------------------------------App-Main-Pages----------------------------------//
+import 'forgot_password.dart';
 import 'home.dart';
 import 'login.dart';
 import 'more_news.dart';
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         '/event': (context) => const Event(),
         '/more_news': (context) => const MoreN(),
         '/more_events': (context) => const MoreE(),
+        '/forgot_password': (context) => const Password(),
       },
       locale: const Locale('en'),
       localizationsDelegates: const [
