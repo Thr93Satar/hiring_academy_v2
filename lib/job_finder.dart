@@ -14,6 +14,15 @@ class Jobs extends StatefulWidget {
 class _JobsState extends State<Jobs> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+     body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: const [
+          SizedBox(
+            height: 10,
+          ),
+        ],
+      ),
+    );
   }
 }

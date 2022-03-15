@@ -1,20 +1,24 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hiring_academy_v2/job_finder.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'home.dart';
 import 'main.dart';
 import 'news.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class Master extends StatefulWidget {
+  const Master({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Master> createState() => _MasterState();
 }
 
-class _HomeState extends State<Home> {
-  int selectedPage= 0;
+class _MasterState extends State<Master> {
   @override
   Widget build(BuildContext context) {
+
+    int selectedPage = 0;
     List<Widget> pageSelection = [
       Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -1487,7 +1491,7 @@ class _HomeState extends State<Home> {
             height: 5,
           ),
         ],
-      ), //----------------------------------------------Home----------------------------------//
+      ),
       Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: const [
@@ -1495,138 +1499,113 @@ class _HomeState extends State<Home> {
             height: 10,
           ),
         ],
-      ), //----------------------------------------------Jobs----------------------------------//
-      Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: const [
-          SizedBox(
-            height: 10,
-          ),
-        ],
-      ), //----------------------------------------------Company----------------------------------//
-      Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: const [
-          SizedBox(
-            height: 10,
-          ),
-        ],
-      ), //----------------------------------------------Progression----------------------------------//
-      Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: const [
-          SizedBox(
-            height: 10,
-          ),
-        ],
-      ), //----------------------------------------------More----------------------------------//
+      ),
     ];
     return Scaffold(
-      body: pageSelection[selectedPage],
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: themecolor,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(20),
-          ),
-        ),
-        title: const Text(
-          'Hiring Academy',
-          style: TextStyle(fontFamily: 'Cabin', fontWeight: FontWeight.bold),
-        ),
-        leading: IconButton(
-          icon: const Icon(
-            Icons.notifications_none,
-            size: 25,
-          ),
-          onPressed: () {
-            print('This is Notification page');
-          },
-        ),
-        actions: [
-          IconButton(
-              icon: const Icon(
-                Icons.account_circle,
-                size: 25,
-              ),
-              onPressed: () {
-                Navigator.pushNamed(context, '/login');
-              }
-          )],
-      ),
-      bottomNavigationBar: Theme(
-        data: Theme.of(context).copyWith(
-          // sets the background color of the `BottomNavigationBar`
-          canvasColor: elementcolor,
-        ),
-        child: BottomNavigationBar(
-            currentIndex: selectedPage,
-          type: BottomNavigationBarType.fixed,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          elevation: 20,
-          iconSize: 10,
-          items: [
-            BottomNavigationBarItem(
-              label: 'Home',
-              icon: CircleAvatar(
-                  maxRadius: 16,
-                  minRadius: 15,
-                  backgroundColor: Colors.deepPurple.shade500,
-                  child: const Icon(
-                    Icons.cottage_rounded,
-                    color: Colors.white,
-                  )),
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: themecolor,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(20),
             ),
-            BottomNavigationBarItem(
-                label: 'Work',
-                icon: CircleAvatar(
-                    maxRadius: 16,
-                    minRadius: 15,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.work,
-                      color: Colors.deepPurple.shade500,
-                    ))),
-            BottomNavigationBarItem(
-                label: 'Company',
-                icon: CircleAvatar(
-                    maxRadius: 16,
-                    minRadius: 15,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.apartment_rounded,
-                      color: Colors.deepPurple.shade500,
-                    ))),
-            BottomNavigationBarItem(
-                label: 'Progression',
-                icon: CircleAvatar(
-                    maxRadius: 16,
-                    minRadius: 15,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.donut_small_rounded,
-                      color: Colors.deepPurple.shade500,
-                    ))),
-            BottomNavigationBarItem(
-                label: 'More',
-                icon: CircleAvatar(
-                    maxRadius: 16,
-                    minRadius: 15,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.more_horiz,
-                      color: Colors.deepPurple.shade500,
-                    ))),
-          ],
-          onTap: (index) {
-            setState(() {
-              selectedPage = index;
-            });
-          },
+          ),
+          title: const Text(
+            'Hiring Academy',
+            style: TextStyle(fontFamily: 'Cabin', fontWeight: FontWeight.bold),
+          ),
+          leading: IconButton(
+            icon: const Icon(
+              Icons.notifications_none,
+              size: 25,
+            ),
+            onPressed: () {
+              print('This is Notification page');
+            },
+          ),
+          actions: [
+            IconButton(
+                icon: const Icon(
+                  Icons.account_circle,
+                  size: 25,
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/login');
+                }
+            )],
         ),
-      ),
-    );
+        bottomNavigationBar: Theme(
+          data: Theme.of(context).copyWith(
+            // sets the background color of the `BottomNavigationBar`
+            canvasColor: elementcolor,
+          ),
+          child: BottomNavigationBar(
+            currentIndex: selectedPage,
+            type: BottomNavigationBarType.fixed,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            elevation: 20,
+            iconSize: 10,
+            items: [
+              BottomNavigationBarItem(
+                label: 'Home',
+                icon: CircleAvatar(
+                    maxRadius: 16,
+                    minRadius: 15,
+                    backgroundColor: Colors.deepPurple.shade500,
+                    child: const Icon(
+                      Icons.cottage_rounded,
+                      color: Colors.white,
+                    )),
+              ),
+              BottomNavigationBarItem(
+                  label: 'Work',
+                  icon: CircleAvatar(
+                      maxRadius: 16,
+                      minRadius: 15,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.work,
+                        color: Colors.deepPurple.shade500,
+                      ))),
+              BottomNavigationBarItem(
+                  label: 'Company',
+                  icon: CircleAvatar(
+                      maxRadius: 16,
+                      minRadius: 15,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.apartment_rounded,
+                        color: Colors.deepPurple.shade500,
+                      ))),
+              BottomNavigationBarItem(
+                  label: 'Progression',
+                  icon: CircleAvatar(
+                      maxRadius: 16,
+                      minRadius: 15,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.donut_small_rounded,
+                        color: Colors.deepPurple.shade500,
+                      ))),
+              BottomNavigationBarItem(
+                  label: 'More',
+                  icon: CircleAvatar(
+                      maxRadius: 16,
+                      minRadius: 15,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.more_horiz,
+                        color: Colors.deepPurple.shade500,
+                      ))),
+            ],
+            onTap: (index) {
+              setState(() {
+                selectedPage = index;
+              });
+            },
+          ),
+        ),
+        body: pageSelection[selectedPage]);
   }
 }

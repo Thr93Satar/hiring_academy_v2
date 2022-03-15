@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hiring_academy_v2/event.dart';
 import 'package:hiring_academy_v2/home_signed_in.dart';
+import 'package:hiring_academy_v2/more_events.dart';
 import 'package:hiring_academy_v2/news.dart';
 // -------------------------------------------App-Main-Pages-----------------------
 import 'home.dart';
@@ -17,6 +19,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    List<Widget> bodies=[
+
+    ];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Hiring Academy',
@@ -30,7 +35,9 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const Login(),
         '/home_signed_in': (context) => const HomeSI(),
         '/news': (context) => const News(),
+        '/event': (context) => const Event(),
         '/more_news': (context) => const MoreN(),
+        '/more_events': (context) => const MoreE(),
       },
       locale: const Locale('en'),
       localizationsDelegates: const [
@@ -88,6 +95,5 @@ Map<int, Color> color2 = {
 
 MaterialColor elementcolor = MaterialColor(0xFFD3CEE6, color2);
 // -------------------------------------Color Swatch----------------------------
-
 
 

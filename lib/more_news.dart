@@ -60,6 +60,7 @@ class _MoreNState extends State<MoreN> {
                               width: 360,
                               child:  Container(
                                 decoration: BoxDecoration(
+                                  borderRadius: const BorderRadius.vertical(top: Radius.circular(10.0)),
                                   color: themecolor,
                                 ),
                                 child: Padding(
@@ -133,7 +134,7 @@ class _MoreNState extends State<MoreN> {
                                   ),
                                 ]
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 15,
                             ),
                             SizedBox(
@@ -173,7 +174,108 @@ class _MoreNState extends State<MoreN> {
                                 ),
                               ),
                             ),
+                            const SizedBox(
+                              height: 60,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Stack(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 200.0),
+                                    child: SizedBox(
+                                      height: 50,
+                                      width: 360,
+                                      child:  Container(
+                                        decoration: BoxDecoration(
+                                          color: themecolor,
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(left: 10.0),
+                                          child: Row(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            children: const [
+                                              Text('Life of the Videographer',
+                                                style: TextStyle(
+                                                  fontSize: 20,
+                                                  color: Colors.white,
+                                                  fontFamily: 'Cabin',
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 200,
+                                    width: 340,
+                                    child: Container(
+                                      decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.vertical(top: Radius.circular(10.0)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black,
+                                            spreadRadius: -2,
+                                            blurRadius: 8,
+                                            offset: Offset(0.0,3),
+                                          ),
+                                        ],
+                                        color: Colors.red,
+                                      ),
+                                      child: ClipRRect(
+                                          borderRadius: BorderRadius.vertical(top: Radius.circular(10.0)),
+                                          child: Image.asset('assets/images/pexels-brett-sayles-1426044.png',fit: BoxFit.fill,)),
+                                    ),
+                                  ),
+                                ]
+                            ),
+                            const SizedBox(
+                              height: 15,
+                            ),
                             SizedBox(
+                              height: 240,
+                              width: 310,
+                              child: Container(
+                                decoration:BoxDecoration(
+                                  borderRadius:const BorderRadius.vertical(bottom: Radius.circular(10)),
+                                  color: themecolor,
+                                ),
+                                child: const SingleChildScrollView(
+                                  child:  Padding(
+                                    padding: EdgeInsets.all(14.0),
+                                    child: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. '
+                                        'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,'
+                                        ' when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n'
+                                        'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. '
+                                        'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, '
+                                        'and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum\'Lorem Ipsum is simply dummy text of the printing '
+                                        'and typesetting industry. \n'
+                                        'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,'
+                                        ' when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n'
+                                        'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. '
+                                        'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, '
+                                        'and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+                                      textAlign: TextAlign.justify,
+                                      style: TextStyle(
+                                        wordSpacing: -1,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w500,
+                                        fontFamily: 'Cabin',
+                                        fontSize: 16,
+                                        overflow: TextOverflow.fade,
+                                        height: 1.5,
+                                      ),),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
                               height: 60,
                             ),
                           ],
@@ -231,7 +333,7 @@ class _MoreNState extends State<MoreN> {
                                   ),
                                 ]
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 15,
                             ),
                             SizedBox(
@@ -271,105 +373,7 @@ class _MoreNState extends State<MoreN> {
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              height: 60,
-                            ),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Stack(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 200.0),
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 360,
-                                      child:  Container(
-                                        decoration: BoxDecoration(
-                                          color: themecolor,
-                                        ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.only(left: 10.0),
-                                          child: Row(
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            children: const [
-                                              Text('Life of the Videographer',
-                                                style: TextStyle(
-                                                  fontSize: 20,
-                                                  color: Colors.white,
-                                                  fontFamily: 'Cabin',
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 200,
-                                    width: 340,
-                                    child: Container(
-                                      decoration: const BoxDecoration(
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.black,
-                                            spreadRadius: -2,
-                                            blurRadius: 8,
-                                            offset: Offset(0.0,2),
-                                          ),
-                                        ],
-                                        color: Colors.red,
-                                      ),
-                                      child: Image.asset('assets/images/pexels-brett-sayles-1426044.png',fit: BoxFit.cover,),
-                                    ),
-                                  ),
-                                ]
-                            ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            SizedBox(
-                              height: 240,
-                              width: 310,
-                              child: Container(
-                                decoration:BoxDecoration(
-                                  borderRadius:const BorderRadius.all(Radius.circular(10)),
-                                  color: themecolor,
-                                ),
-                                child: const SingleChildScrollView(
-                                  child:  Padding(
-                                    padding: EdgeInsets.all(14.0),
-                                    child: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. '
-                                        'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,'
-                                        ' when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n'
-                                        'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. '
-                                        'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, '
-                                        'and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum\'Lorem Ipsum is simply dummy text of the printing '
-                                        'and typesetting industry. \n'
-                                        'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,'
-                                        ' when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n'
-                                        'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. '
-                                        'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, '
-                                        'and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-                                      textAlign: TextAlign.justify,
-                                      style: TextStyle(
-                                        wordSpacing: -1,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500,
-                                        fontFamily: 'Cabin',
-                                        fontSize: 16,
-                                        overflow: TextOverflow.fade,
-                                        height: 1.5,
-                                      ),),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
+                            const SizedBox(
                               height: 60,
                             ),
                           ],
@@ -467,7 +471,7 @@ class _MoreNState extends State<MoreN> {
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 60,
                             ),
                           ],
