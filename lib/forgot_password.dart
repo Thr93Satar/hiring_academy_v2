@@ -126,7 +126,9 @@ class _PasswordState extends State<Password> {
                         shape: const CircleBorder(),
                         padding: const EdgeInsets.all(16),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, '/password_reset');
+                      },
                       child: const Icon(Icons.arrow_forward_rounded),
                     ),
                   ),
@@ -144,7 +146,7 @@ class _PasswordState extends State<Password> {
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 16,
                 ),
               ),
               const SizedBox(

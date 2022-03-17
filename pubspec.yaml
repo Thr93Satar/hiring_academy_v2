@@ -80,16 +80,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Bebas
+    - family: cabin
       fonts:
-         - asset: fonts\Bebas-Regular.ttf
-           style: normal
-    - family: Cabin
-      fonts:
-         - asset: fonts/Cabin/Cabin-Regular.ttf
-         - asset: fonts/Cabin/static/Cabin/Cabin-SemiBold.ttf
-         - asset: fonts/Cabin/Cabin-Bold.ttf
-           style: normal
+         - asset: fonts/cabin.ttf
 
 
   # For details regarding fonts from package dependencies,

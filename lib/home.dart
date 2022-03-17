@@ -12,7 +12,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int selectedPage= 0;
+  int selectedPage = 0;
+
   @override
   Widget build(BuildContext context) {
     List<Widget> pageSelection = [
@@ -23,8 +24,7 @@ class _HomeState extends State<Home> {
             height: 10,
           ),
           Expanded(
-            flex: 3,
-            child: Row(children: [
+            child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
               const SizedBox(
                 width: 10,
               ),
@@ -36,467 +36,517 @@ class _HomeState extends State<Home> {
                     Stack(
                       children: [
                         SizedBox(
-                            height: 160,
-                            width: 145,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius:
-                                const BorderRadius.all(Radius.circular(10)),
-                                color: Colors.purple.shade50,
-                              ),
-                              child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    const Text(
-                                      "What's New",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 18,
+                          width: 150,
+                          child: Container(
+                            margin: const EdgeInsets.only(bottom: 20),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(10)),
+                              color: Colors.purple.shade50,
+                            ),
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Expanded(
+                                    child: Container(
+                                      margin: const EdgeInsets.only(top: 35),
+                                      child: const Text(
+                                        "What's New",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 18,
+                                        ),
                                       ),
                                     ),
-                                    Icon(
+                                  ),
+                                  Expanded(
+                                    child: Icon(
                                       MdiIcons.newspaperVariantMultipleOutline,
                                       size: 40,
                                       color: Colors.deepPurple.shade500,
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 15.0),
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(10.0),
                                       child: ElevatedButton(
                                           onPressed: () {
-                                            Navigator.pushNamed(context, '/more_news');
+                                            Navigator.pushNamed(
+                                                context, '/more_news');
                                           },
                                           style: ButtonStyle(
                                             backgroundColor:
-                                            MaterialStateProperty.all<Color>(
+                                                MaterialStateProperty.all<
+                                                    Color>(
                                               Colors.deepPurple.shade500,
                                             ),
                                           ),
                                           child: const Text('See All')),
-                                    )
-                                  ]),
-                            )),
-                        Padding(
-                          //--------------------------------------------------------------------- First picture in the slider --------------------------------------------//
-                          padding: const EdgeInsets.only(left: 150.0),
-                          child: SizedBox(
-                              height: 160,
-                              width: 180,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(20.0)),
-                                  color: Colors.purple.shade50,
-                                ),
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      InkWell(
-                                        splashColor: Colors.white,
-                                        onTap: () {
-                                          Navigator.pushNamed(context, '/news');
-                                        },
-                                        child: Stack(
-                                            alignment:
+                                    ),
+                                  )
+                                ]),
+                          ),
+                        ),
+                        //--------------------------------------------------------------------- What's new container ----------------------------------------//
+                        SizedBox(
+                            child: Container(
+                          margin: const EdgeInsets.only(bottom: 20, left: 155),
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(20)),
+                            color: Colors.purple.shade50,
+                          ),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: InkWell(
+                                    splashColor: Colors.white,
+                                    onTap: () {
+                                      Navigator.pushNamed(context, '/news');
+                                    },
+                                    child: Stack(
+                                        alignment:
                                             AlignmentDirectional.bottomCenter,
-                                            children: [
-                                              ClipRRect(
+                                        children: [
+                                          SizedBox(
+                                            child: AspectRatio(
+                                              aspectRatio: 3 / 3,
+                                              child: ClipRRect(
                                                 borderRadius:
-                                                const BorderRadius.all(
-                                                    Radius.circular(20.0)),
+                                                    BorderRadius.circular(20.0),
                                                 child: Image.asset(
-                                                    'assets/images/pexels-brett-sayles-1426044.png',
-                                                    fit: BoxFit.cover,
-                                                    width: 180.0,
-                                                    height: 160.0),
-                                              ),
-                                              Container(
-                                                height: 160.0,
-                                                decoration: BoxDecoration(
-                                                    borderRadius:
-                                                    const BorderRadius.all(
-                                                        Radius.circular(
-                                                            20.0)),
-                                                    color: Colors.black,
-                                                    gradient: LinearGradient(
-                                                      begin:
-                                                      FractionalOffset.center,
-                                                      end: FractionalOffset
-                                                          .bottomCenter,
-                                                      colors: [
-                                                        Colors.grey
-                                                            .withOpacity(0.0),
-                                                        Colors.black,
-                                                      ],
-                                                    )),
-                                              ),
-                                              const Padding(
-                                                padding: EdgeInsets.only(
-                                                    right: 15.0, bottom: 5.0),
-                                                child: Text(
-                                                  'Life of Videographer',
-                                                  style: TextStyle(
-                                                      color: Colors.white),
+                                                  'assets/images/pexels-brett-sayles-1426044.png',
+                                                  fit: BoxFit.cover,
                                                 ),
                                               ),
-                                            ]),
-                                      ),
-                                    ]),
-                              )),
-                        ),
-                        //------------------------------------------------------------------- First picture in the slider ----------------------------//
-                        Padding(
-                          //-------------------------------------------------------------- Second picture in the slider ---------------------------------//
-                          padding: const EdgeInsets.only(left: 300.0),
-                          child: SizedBox(
-                              height: 160,
-                              width: 180,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                  const BorderRadius.all(Radius.circular(20)),
-                                  color: Colors.purple.shade50,
+                                            ),
+                                          ),
+                                          AspectRatio(
+                                            aspectRatio: 3 / 3,
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      const BorderRadius.all(
+                                                          Radius.circular(
+                                                              19.0)),
+                                                  color: Colors.black,
+                                                  gradient: LinearGradient(
+                                                    begin:
+                                                        FractionalOffset.center,
+                                                    end: FractionalOffset
+                                                        .bottomCenter,
+                                                    colors: [
+                                                      Colors.grey
+                                                          .withOpacity(0.0),
+                                                      Colors.black,
+                                                    ],
+                                                  )),
+                                            ),
+                                          ),
+                                          const Padding(
+                                            padding: EdgeInsets.only(
+                                                right: 15.0, bottom: 5.0),
+                                            child: Text(
+                                              'Chinatown Resturants',
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                          ),
+                                        ]),
+                                  ),
                                 ),
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      InkWell(
-                                        splashColor: Colors.white,
-                                        onTap: () {
-                                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => const News()));
-                                        },
-                                        child: Stack(
-                                            alignment:
+                              ]),
+                        )),
+                        //--------------------------------------------------------------------- First picture in the slider ---------------------------------//
+                        SizedBox(
+                            child: Container(
+                          margin: const EdgeInsets.only(bottom: 20, left: 305),
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(20)),
+                            color: Colors.purple.shade50,
+                          ),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: InkWell(
+                                    splashColor: Colors.white,
+                                    onTap: () {
+                                      Navigator.pushNamed(context, '/news');
+                                    },
+                                    child: Stack(
+                                        alignment:
                                             AlignmentDirectional.bottomCenter,
-                                            children: [
-                                              ClipRRect(
+                                        children: [
+                                          SizedBox(
+                                            child: AspectRatio(
+                                              aspectRatio: 3 / 3,
+                                              child: ClipRRect(
                                                 borderRadius:
-                                                BorderRadius.circular(20.0),
+                                                    BorderRadius.circular(20.0),
                                                 child: Image.asset(
-                                                    'assets/images/farhad-ibrahimzade-54dvxsQeQIM-unsplash.jpg',
-                                                    fit: BoxFit.cover,
-                                                    width: 180.0,
-                                                    height: 160.0),
-                                              ),
-                                              Container(
-                                                height: 160.0,
-                                                decoration: BoxDecoration(
-                                                    borderRadius:
-                                                    const BorderRadius.all(
-                                                        Radius.circular(
-                                                            19.0)),
-                                                    color: Colors.black,
-                                                    gradient: LinearGradient(
-                                                      begin:
-                                                      FractionalOffset.center,
-                                                      end: FractionalOffset
-                                                          .bottomCenter,
-                                                      colors: [
-                                                        Colors.grey
-                                                            .withOpacity(0.0),
-                                                        Colors.black,
-                                                      ],
-                                                    )),
-                                              ),
-                                              const Padding(
-                                                padding: EdgeInsets.only(
-                                                    right: 15.0, bottom: 5.0),
-                                                child: Text(
-                                                  'Chinatown Resturants',
-                                                  style: TextStyle(
-                                                      color: Colors.white),
+                                                  'assets/images/farhad-ibrahimzade-54dvxsQeQIM-unsplash.jpg',
+                                                  fit: BoxFit.cover,
                                                 ),
                                               ),
-                                            ]),
-                                      ),
-                                    ]),
-                              )),
-                        ),
-                        //------------------------------------------------------------ second picture in the slider ---------------------------------//
-                        Padding(
-                          //------------------------------------------------------ third picture in the slider ---------------------------------//
-                          padding: const EdgeInsets.only(left: 450.0),
-                          child: SizedBox(
-                              height: 160,
-                              width: 180,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                  const BorderRadius.all(Radius.circular(20)),
-                                  color: Colors.purple.shade50,
+                                            ),
+                                          ),
+                                          AspectRatio(
+                                            aspectRatio: 3 / 3,
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      const BorderRadius.all(
+                                                          Radius.circular(
+                                                              19.0)),
+                                                  color: Colors.black,
+                                                  gradient: LinearGradient(
+                                                    begin:
+                                                        FractionalOffset.center,
+                                                    end: FractionalOffset
+                                                        .bottomCenter,
+                                                    colors: [
+                                                      Colors.grey
+                                                          .withOpacity(0.0),
+                                                      Colors.black,
+                                                    ],
+                                                  )),
+                                            ),
+                                          ),
+                                          const Padding(
+                                            padding: EdgeInsets.only(
+                                                right: 15.0, bottom: 5.0),
+                                            child: Text(
+                                              'Chinatown Resturants',
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                          ),
+                                        ]),
+                                  ),
                                 ),
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      InkWell(
-                                        splashColor: Colors.white,
-                                        onTap: () {
-                                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => const News()));
-                                        },
-                                        child: Stack(
-                                            alignment:
+                              ]),
+                        )),
+                        //--------------------------------------------------------------------- Second picture in the slider --------------------------------//
+                        SizedBox(
+                            child: Container(
+                              margin: const EdgeInsets.only(bottom: 20, left: 455),
+                              decoration: BoxDecoration(
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(20)),
+                            color: Colors.purple.shade50,
+                          ),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: InkWell(
+                                    splashColor: Colors.white,
+                                    onTap: () {
+                                      Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder:
+                                                  (BuildContext context) =>
+                                                      const News()));
+                                    },
+                                    child: Stack(
+                                        alignment:
                                             AlignmentDirectional.bottomCenter,
-                                            children: [
-                                              ClipRRect(
+                                        children: [
+                                          SizedBox(
+                                            child: AspectRatio(
+                                              aspectRatio: 3 / 3,
+                                              child: ClipRRect(
                                                 borderRadius:
-                                                BorderRadius.circular(20.0),
+                                                    BorderRadius.circular(
+                                                        20.0),
                                                 child: Image.asset(
-                                                    'assets/images/tim-mossholder-GOMhuCj-O9w-unsplash.jpg',
-                                                    fit: BoxFit.cover,
-                                                    width: 180.0,
-                                                    height: 160.0),
-                                              ),
-                                              Container(
-                                                height: 160.0,
-                                                decoration: BoxDecoration(
-                                                    borderRadius:
-                                                    const BorderRadius.all(
-                                                        Radius.circular(
-                                                            19.0)),
-                                                    color: Colors.black,
-                                                    gradient: LinearGradient(
-                                                      begin:
-                                                      FractionalOffset.center,
-                                                      end: FractionalOffset
-                                                          .bottomCenter,
-                                                      colors: [
-                                                        Colors.grey
-                                                            .withOpacity(0.0),
-                                                        Colors.black,
-                                                      ],
-                                                    )),
-                                              ),
-                                              const Padding(
-                                                padding: EdgeInsets.only(
-                                                    right: 15.0, bottom: 5.0),
-                                                child: Text(
-                                                  'Creative Ideas',
-                                                  style: TextStyle(
-                                                      color: Colors.white),
+                                                  'assets/images/farhad-ibrahimzade-54dvxsQeQIM-unsplash.jpg',
+                                                  fit: BoxFit.cover,
                                                 ),
                                               ),
-                                            ]),
-                                      ),
-                                    ]),
-                              )),
-                        ),
-                        //--------------------------------------------------------------------- third picture in the slider ---------------------------------//
-                        Padding(
-                          //---------------------------------------------------------------- forth picture in the slider ---------------------------------//
-                          padding: const EdgeInsets.only(left: 600.0),
-                          child: SizedBox(
-                              height: 160,
-                              width: 180,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                  const BorderRadius.all(Radius.circular(20)),
-                                  color: Colors.purple.shade50,
+                                            ),
+                                          ),
+                                          AspectRatio(
+                                            aspectRatio: 3 / 3,
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      const BorderRadius.all(
+                                                          Radius.circular(
+                                                              19.0)),
+                                                  color: Colors.black,
+                                                  gradient: LinearGradient(
+                                                    begin: FractionalOffset
+                                                        .center,
+                                                    end: FractionalOffset
+                                                        .bottomCenter,
+                                                    colors: [
+                                                      Colors.grey
+                                                          .withOpacity(0.0),
+                                                      Colors.black,
+                                                    ],
+                                                  )),
+                                            ),
+                                          ),
+                                          const Padding(
+                                            padding: EdgeInsets.only(
+                                                right: 15.0, bottom: 5.0),
+                                            child: Text(
+                                              'Chinatown Resturants',
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                          ),
+                                        ]),
+                                  ),
                                 ),
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      InkWell(
-                                        splashColor: Colors.white,
-                                        onTap: () {
-                                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => const News()));
-                                        },
-                                        child: Stack(
-                                            alignment:
+                              ]),
+                        )),
+                        //--------------------------------------------------------------------- Third picture in the slider ---------------------------------//
+                        SizedBox(
+                            child: Container(
+                          margin: const EdgeInsets.only(bottom: 20, left: 605),
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(20)),
+                            color: Colors.purple.shade50,
+                          ),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: InkWell(
+                                    splashColor: Colors.white,
+                                    onTap: () {
+                                      Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder:
+                                                  (BuildContext context) =>
+                                                      const News()));
+                                    },
+                                    child: Stack(
+                                        alignment:
                                             AlignmentDirectional.bottomCenter,
-                                            children: [
-                                              ClipRRect(
+                                        children: [
+                                          SizedBox(
+                                            child: AspectRatio(
+                                              aspectRatio: 3 / 3,
+                                              child: ClipRRect(
                                                 borderRadius:
-                                                BorderRadius.circular(20.0),
+                                                    BorderRadius.circular(
+                                                        20.0),
                                                 child: Image.asset(
-                                                    'assets/images/olena-sergienko-dIMJWLx1YbE-unsplash.jpg',
-                                                    fit: BoxFit.cover,
-                                                    width: 180.0,
-                                                    height: 160.0),
-                                              ),
-                                              Container(
-                                                height: 160.0,
-                                                decoration: BoxDecoration(
-                                                    borderRadius:
-                                                    const BorderRadius.all(
-                                                        Radius.circular(
-                                                            19.0)),
-                                                    color: Colors.black,
-                                                    gradient: LinearGradient(
-                                                      begin:
-                                                      FractionalOffset.center,
-                                                      end: FractionalOffset
-                                                          .bottomCenter,
-                                                      colors: [
-                                                        Colors.grey
-                                                            .withOpacity(0.0),
-                                                        Colors.black,
-                                                      ],
-                                                    )),
-                                              ),
-                                              const Padding(
-                                                padding: EdgeInsets.only(
-                                                    right: 15.0, bottom: 5.0),
-                                                child: Text(
-                                                  'Life and Technology',
-                                                  style: TextStyle(
-                                                      color: Colors.white),
+                                                  'assets/images/farhad-ibrahimzade-54dvxsQeQIM-unsplash.jpg',
+                                                  fit: BoxFit.cover,
                                                 ),
                                               ),
-                                            ]),
-                                      ),
-                                    ]),
-                              )),
-                        ),
-                        //--------------------------------------------------------------------- forth picture in the slider ---------------------------------//
-                        Padding(
-                          //---------------------------------------------------------------- fifth picture in the slider ---------------------------------//
-                          padding: const EdgeInsets.only(left: 750.0),
-                          child: SizedBox(
-                              height: 160,
-                              width: 180,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                  const BorderRadius.all(Radius.circular(20)),
-                                  color: Colors.purple.shade50,
+                                            ),
+                                          ),
+                                          AspectRatio(
+                                            aspectRatio: 3 / 3,
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      const BorderRadius.all(
+                                                          Radius.circular(
+                                                              19.0)),
+                                                  color: Colors.black,
+                                                  gradient: LinearGradient(
+                                                    begin: FractionalOffset
+                                                        .center,
+                                                    end: FractionalOffset
+                                                        .bottomCenter,
+                                                    colors: [
+                                                      Colors.grey
+                                                          .withOpacity(0.0),
+                                                      Colors.black,
+                                                    ],
+                                                  )),
+                                            ),
+                                          ),
+                                          const Padding(
+                                            padding: EdgeInsets.only(
+                                                right: 15.0, bottom: 5.0),
+                                            child: Text(
+                                              'Chinatown Resturants',
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                          ),
+                                        ]),
+                                  ),
                                 ),
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      InkWell(
-                                        splashColor: Colors.white,
-                                        onTap: () {
-                                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => const News()));
-                                        },
-                                        child: Stack(
-                                            alignment:
+                              ]),
+                        )),
+                        //--------------------------------------------------------------------- Forth picture in the slider ---------------------------------//
+                        SizedBox(
+                            child: Container(
+                          margin: const EdgeInsets.only(bottom: 20, left: 755),
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(20)),
+                            color: Colors.purple.shade50,
+                          ),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: InkWell(
+                                    splashColor: Colors.white,
+                                    onTap: () {
+                                      Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder:
+                                                  (BuildContext context) =>
+                                                      const News()));
+                                    },
+                                    child: Stack(
+                                        alignment:
                                             AlignmentDirectional.bottomCenter,
-                                            children: [
-                                              ClipRRect(
+                                        children: [
+                                          SizedBox(
+                                            child: AspectRatio(
+                                              aspectRatio: 3 / 3,
+                                              child: ClipRRect(
                                                 borderRadius:
-                                                BorderRadius.circular(20.0),
+                                                    BorderRadius.circular(
+                                                        20.0),
                                                 child: Image.asset(
-                                                    'assets/images/pexels-pixabay-260367.jpg',
-                                                    fit: BoxFit.cover,
-                                                    width: 180.0,
-                                                    height: 160.0),
-                                              ),
-                                              Container(
-                                                height: 160.0,
-                                                decoration: BoxDecoration(
-                                                    borderRadius:
-                                                    const BorderRadius.all(
-                                                        Radius.circular(
-                                                            19.0)),
-                                                    color: Colors.black,
-                                                    gradient: LinearGradient(
-                                                      begin:
-                                                      FractionalOffset.center,
-                                                      end: FractionalOffset
-                                                          .bottomCenter,
-                                                      colors: [
-                                                        Colors.grey
-                                                            .withOpacity(0.0),
-                                                        Colors.black,
-                                                      ],
-                                                    )),
-                                              ),
-                                              const Padding(
-                                                padding: EdgeInsets.only(
-                                                    right: 15.0, bottom: 5.0),
-                                                child: Text(
-                                                  'Fighting Flames',
-                                                  style: TextStyle(
-                                                      color: Colors.white),
+                                                  'assets/images/farhad-ibrahimzade-54dvxsQeQIM-unsplash.jpg',
+                                                  fit: BoxFit.cover,
                                                 ),
                                               ),
-                                            ]),
-                                      ),
-                                    ]),
-                              )),
-                        ),
-                        //---------------------------------------------------------------- fifth picture in the slider ---------------------------------//
-                        Padding(
-                          //----------------------------------------------------------- Sixth picture in the slider ---------------------------------//
-                          padding: const EdgeInsets.only(left: 900.0),
-                          child: SizedBox(
-                              height: 160,
-                              width: 180,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                  const BorderRadius.all(Radius.circular(20)),
-                                  color: Colors.purple.shade50,
+                                            ),
+                                          ),
+                                          AspectRatio(
+                                            aspectRatio: 3 / 3,
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      const BorderRadius.all(
+                                                          Radius.circular(
+                                                              19.0)),
+                                                  color: Colors.black,
+                                                  gradient: LinearGradient(
+                                                    begin: FractionalOffset
+                                                        .center,
+                                                    end: FractionalOffset
+                                                        .bottomCenter,
+                                                    colors: [
+                                                      Colors.grey
+                                                          .withOpacity(0.0),
+                                                      Colors.black,
+                                                    ],
+                                                  )),
+                                            ),
+                                          ),
+                                          const Padding(
+                                            padding: EdgeInsets.only(
+                                                right: 15.0, bottom: 5.0),
+                                            child: Text(
+                                              'Chinatown Resturants',
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                          ),
+                                        ]),
+                                  ),
                                 ),
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      InkWell(
-                                        splashColor: Colors.white,
-                                        onTap: () {
-                                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => const News()));
-                                        },
-                                        child: Stack(
-                                            alignment:
+                              ]),
+                        )),
+                        //--------------------------------------------------------------------- Fifth picture in the slider ---------------------------------//
+                        SizedBox(
+                            child: Container(
+                          margin: const EdgeInsets.only(bottom: 20, left: 905),
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(20)),
+                            color: Colors.purple.shade50,
+                          ),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: InkWell(
+                                    splashColor: Colors.white,
+                                    onTap: () {
+                                      Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder:
+                                                  (BuildContext context) =>
+                                                      const News()));
+                                    },
+                                    child: Stack(
+                                        alignment:
                                             AlignmentDirectional.bottomCenter,
-                                            children: [
-                                              ClipRRect(
+                                        children: [
+                                          SizedBox(
+                                            child: AspectRatio(
+                                              aspectRatio: 3 / 3,
+                                              child: ClipRRect(
                                                 borderRadius:
-                                                BorderRadius.circular(20.0),
+                                                    BorderRadius.circular(
+                                                        20.0),
                                                 child: Image.asset(
-                                                    'assets/images/pexels-energepiccom-175045 (1).jpg',
-                                                    fit: BoxFit.cover,
-                                                    width: 180.0,
-                                                    height: 160.0),
-                                              ),
-                                              Container(
-                                                height: 160.0,
-                                                decoration: BoxDecoration(
-                                                    borderRadius:
-                                                    const BorderRadius.all(
-                                                        Radius.circular(
-                                                            19.0)),
-                                                    color: Colors.black,
-                                                    gradient: LinearGradient(
-                                                      begin:
-                                                      FractionalOffset.center,
-                                                      end: FractionalOffset
-                                                          .bottomCenter,
-                                                      colors: [
-                                                        Colors.grey
-                                                            .withOpacity(0.0),
-                                                        Colors.black,
-                                                      ],
-                                                    )),
-                                              ),
-                                              const Padding(
-                                                padding:
-                                                EdgeInsets.only(bottom: 5.0),
-                                                child: Text(
-                                                  'New Contracts',
-                                                  style: TextStyle(
-                                                      color: Colors.white),
+                                                  'assets/images/farhad-ibrahimzade-54dvxsQeQIM-unsplash.jpg',
+                                                  fit: BoxFit.cover,
                                                 ),
                                               ),
-                                              //----------------------------------------------------------- Sixth picture in the slider ---------------------------------//
-                                            ]),
-                                      ),
-                                    ]),
-                              )),
-                        ),
+                                            ),
+                                          ),
+                                          AspectRatio(
+                                            aspectRatio: 3 / 3,
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      const BorderRadius.all(
+                                                          Radius.circular(
+                                                              19.0)),
+                                                  color: Colors.black,
+                                                  gradient: LinearGradient(
+                                                    begin: FractionalOffset
+                                                        .center,
+                                                    end: FractionalOffset
+                                                        .bottomCenter,
+                                                    colors: [
+                                                      Colors.grey
+                                                          .withOpacity(0.0),
+                                                      Colors.black,
+                                                    ],
+                                                  )),
+                                            ),
+                                          ),
+                                          const Padding(
+                                            padding: EdgeInsets.only(
+                                                right: 15.0, bottom: 5.0),
+                                            child: Text(
+                                              'Chinatown Resturants',
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                          ),
+                                        ]),
+                                  ),
+                                ),
+                              ]),
+                        )),
                       ],
                     ),
                   ],
                 ),
               ),
-              const SizedBox(
-                width: 10,
-              )
             ]),
           ),
-          // ----------------------------What's New ------------------------
+
+          // ----------------------------What's New -------------------------------------- //
           Expanded(
-            flex: 4,
             child: Row(
               children: [
                 const SizedBox(
@@ -504,8 +554,9 @@ class _HomeState extends State<Home> {
                   width: 10,
                 ),
                 Expanded(
+                  //--------------------------------------Events Section ----------------------------//
                   child: ListView(
-                    //------------------------- Listview Start --------------------//
+                      //------------------------- Listview Start --------------------//
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       children: [
@@ -517,8 +568,8 @@ class _HomeState extends State<Home> {
                               width: 120,
                               child: Container(
                                 decoration: BoxDecoration(
-                                  borderRadius:
-                                  const BorderRadius.all(Radius.circular(10)),
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(10)),
                                   color: Colors.purple.shade50,
                                 ),
                                 child: Column(
@@ -540,15 +591,17 @@ class _HomeState extends State<Home> {
                                         color: Colors.deepPurple.shade500,
                                       ),
                                       Padding(
-                                        padding: const EdgeInsets.only(top: 40.0),
+                                        padding:
+                                            const EdgeInsets.only(top: 40.0),
                                         child: ElevatedButton(
                                             onPressed: () {
-                                              Navigator.pushNamed(context, '/more_events');
+                                              Navigator.pushNamed(
+                                                  context, '/more_events');
                                             },
                                             style: ButtonStyle(
                                               backgroundColor:
-                                              MaterialStateProperty.all<
-                                                  Color>(
+                                                  MaterialStateProperty.all<
+                                                      Color>(
                                                 Colors.deepPurple.shade500,
                                               ),
                                             ),
@@ -576,12 +629,14 @@ class _HomeState extends State<Home> {
                                     color: Colors.purple.shade50,
                                   ),
                                   child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         InkWell(
                                           splashColor: Colors.white,
                                           onTap: () {
-                                            Navigator.pushNamed(context, '/event');
+                                            Navigator.pushNamed(
+                                                context, '/event');
                                           },
                                           child: Stack(
                                               alignment: AlignmentDirectional
@@ -589,8 +644,8 @@ class _HomeState extends State<Home> {
                                               children: [
                                                 ClipRRect(
                                                   borderRadius:
-                                                  const BorderRadius.all(
-                                                      Radius.circular(5.0)),
+                                                      const BorderRadius.all(
+                                                          Radius.circular(5.0)),
                                                   child: Image.asset(
                                                       'assets/images/pexels-luis-quintero-2774556.jpg',
                                                       fit: BoxFit.cover,
@@ -601,9 +656,10 @@ class _HomeState extends State<Home> {
                                                   height: 105.0,
                                                   decoration: BoxDecoration(
                                                       borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(
-                                                              5.0)),
+                                                          const BorderRadius
+                                                                  .all(
+                                                              Radius.circular(
+                                                                  5.0)),
                                                       color: Colors.black,
                                                       gradient: LinearGradient(
                                                         begin: FractionalOffset
@@ -643,7 +699,8 @@ class _HomeState extends State<Home> {
                                     color: Colors.purple.shade50,
                                   ),
                                   child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         InkWell(
                                           splashColor: Colors.white,
@@ -654,8 +711,8 @@ class _HomeState extends State<Home> {
                                               children: [
                                                 ClipRRect(
                                                   borderRadius:
-                                                  const BorderRadius.all(
-                                                      Radius.circular(5.0)),
+                                                      const BorderRadius.all(
+                                                          Radius.circular(5.0)),
                                                   child: Image.asset(
                                                       'assets/images/pexels-matheus-bertelli-3321793.jpg',
                                                       fit: BoxFit.cover,
@@ -666,9 +723,10 @@ class _HomeState extends State<Home> {
                                                   height: 110.0,
                                                   decoration: BoxDecoration(
                                                       borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(
-                                                              5.0)),
+                                                          const BorderRadius
+                                                                  .all(
+                                                              Radius.circular(
+                                                                  5.0)),
                                                       color: Colors.black,
                                                       gradient: LinearGradient(
                                                         begin: FractionalOffset
@@ -714,7 +772,8 @@ class _HomeState extends State<Home> {
                                     color: Colors.purple.shade50,
                                   ),
                                   child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         InkWell(
                                           splashColor: Colors.white,
@@ -725,8 +784,8 @@ class _HomeState extends State<Home> {
                                               children: [
                                                 ClipRRect(
                                                   borderRadius:
-                                                  const BorderRadius.all(
-                                                      Radius.circular(5.0)),
+                                                      const BorderRadius.all(
+                                                          Radius.circular(5.0)),
                                                   child: Image.asset(
                                                       'assets/images/pexels-antoni-shkraba-4348403.jpg',
                                                       fit: BoxFit.cover,
@@ -737,9 +796,10 @@ class _HomeState extends State<Home> {
                                                   height: 220.0,
                                                   decoration: BoxDecoration(
                                                       borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(
-                                                              5.0)),
+                                                          const BorderRadius
+                                                                  .all(
+                                                              Radius.circular(
+                                                                  5.0)),
                                                       color: Colors.black,
                                                       gradient: LinearGradient(
                                                         begin: FractionalOffset
@@ -789,20 +849,22 @@ class _HomeState extends State<Home> {
                                       ),
                                       child: Column(
                                           mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                              MainAxisAlignment.center,
                                           children: [
                                             InkWell(
                                               splashColor: Colors.white,
                                               onTap: () {},
                                               child: Stack(
-                                                  alignment: AlignmentDirectional
-                                                      .bottomCenter,
+                                                  alignment:
+                                                      AlignmentDirectional
+                                                          .bottomCenter,
                                                   children: [
                                                     ClipRRect(
                                                       borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(
-                                                              5.0)),
+                                                          const BorderRadius
+                                                                  .all(
+                                                              Radius.circular(
+                                                                  5.0)),
                                                       child: Image.asset(
                                                           'assets/images/pexels-josh-sorenson-976866.jpg',
                                                           fit: BoxFit.cover,
@@ -813,22 +875,23 @@ class _HomeState extends State<Home> {
                                                       height: 105.0,
                                                       decoration: BoxDecoration(
                                                           borderRadius:
-                                                          const BorderRadius
-                                                              .all(
-                                                              Radius.circular(
-                                                                  5.0)),
+                                                              const BorderRadius
+                                                                      .all(
+                                                                  Radius
+                                                                      .circular(
+                                                                          5.0)),
                                                           color: Colors.black,
                                                           gradient:
-                                                          LinearGradient(
+                                                              LinearGradient(
                                                             begin:
-                                                            FractionalOffset
-                                                                .center,
+                                                                FractionalOffset
+                                                                    .center,
                                                             end: FractionalOffset
                                                                 .bottomCenter,
                                                             colors: [
                                                               Colors.grey
                                                                   .withOpacity(
-                                                                  0.0),
+                                                                      0.0),
                                                               Colors.black,
                                                             ],
                                                           )),
@@ -839,7 +902,8 @@ class _HomeState extends State<Home> {
                                                       child: Text(
                                                         'ScoreArena Festival',
                                                         style: TextStyle(
-                                                            color: Colors.white),
+                                                            color:
+                                                                Colors.white),
                                                       ),
                                                     ),
                                                   ]),
@@ -860,20 +924,22 @@ class _HomeState extends State<Home> {
                                       ),
                                       child: Column(
                                           mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                              MainAxisAlignment.center,
                                           children: [
                                             InkWell(
                                               splashColor: Colors.white,
                                               onTap: () {},
                                               child: Stack(
-                                                  alignment: AlignmentDirectional
-                                                      .bottomCenter,
+                                                  alignment:
+                                                      AlignmentDirectional
+                                                          .bottomCenter,
                                                   children: [
                                                     ClipRRect(
                                                       borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(
-                                                              5.0)),
+                                                          const BorderRadius
+                                                                  .all(
+                                                              Radius.circular(
+                                                                  5.0)),
                                                       child: Image.asset(
                                                           'assets/images/pexels-stefan-lorentz-668137.jpg',
                                                           fit: BoxFit.cover,
@@ -884,22 +950,24 @@ class _HomeState extends State<Home> {
                                                       height: 105.0,
                                                       decoration: BoxDecoration(
                                                           borderRadius:
-                                                          const BorderRadius
-                                                              .all(
-                                                              Radius.circular(
-                                                                  5.0)),
+                                                              const BorderRadius
+                                                                      .all(
+                                                                  Radius
+                                                                      .circular(
+                                                                          5.0)),
                                                           color: Colors.black,
                                                           gradient:
-                                                          LinearGradient(
+                                                              LinearGradient(
                                                             begin:
-                                                            FractionalOffset
-                                                                .center,
-                                                            end: FractionalOffset
-                                                                .topCenter,
+                                                                FractionalOffset
+                                                                    .center,
+                                                            end:
+                                                                FractionalOffset
+                                                                    .topCenter,
                                                             colors: [
                                                               Colors.grey
                                                                   .withOpacity(
-                                                                  0.0),
+                                                                      0.0),
                                                               Colors.black,
                                                             ],
                                                           )),
@@ -910,9 +978,11 @@ class _HomeState extends State<Home> {
                                                       child: Text(
                                                         'Reading Day',
                                                         style: TextStyle(
-                                                            overflow: TextOverflow
-                                                                .ellipsis,
-                                                            color: Colors.white),
+                                                            overflow:
+                                                                TextOverflow
+                                                                    .ellipsis,
+                                                            color:
+                                                                Colors.white),
                                                       ),
                                                     ),
                                                   ]),
@@ -925,7 +995,7 @@ class _HomeState extends State<Home> {
                               height: 5,
                             ),
                             SizedBox(
-                              //----------------------------------HorizBox--------------------------//
+                                //----------------------------------HorizBox--------------------------//
                                 height: 110,
                                 width: 285,
                                 child: Container(
@@ -935,7 +1005,8 @@ class _HomeState extends State<Home> {
                                     color: Colors.purple.shade50,
                                   ),
                                   child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         InkWell(
                                           splashColor: Colors.white,
@@ -946,8 +1017,8 @@ class _HomeState extends State<Home> {
                                               children: [
                                                 ClipRRect(
                                                   borderRadius:
-                                                  const BorderRadius.all(
-                                                      Radius.circular(5.0)),
+                                                      const BorderRadius.all(
+                                                          Radius.circular(5.0)),
                                                   child: Image.asset(
                                                       'assets/images/pexels-teddy-yang-2263436.jpg',
                                                       fit: BoxFit.cover,
@@ -958,9 +1029,10 @@ class _HomeState extends State<Home> {
                                                   height: 110.0,
                                                   decoration: BoxDecoration(
                                                       borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(
-                                                              5.0)),
+                                                          const BorderRadius
+                                                                  .all(
+                                                              Radius.circular(
+                                                                  5.0)),
                                                       color: Colors.black,
                                                       gradient: LinearGradient(
                                                         begin: FractionalOffset
@@ -1007,7 +1079,8 @@ class _HomeState extends State<Home> {
                                     color: Colors.purple.shade50,
                                   ),
                                   child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         InkWell(
                                           splashColor: Colors.white,
@@ -1018,8 +1091,8 @@ class _HomeState extends State<Home> {
                                               children: [
                                                 ClipRRect(
                                                   borderRadius:
-                                                  const BorderRadius.all(
-                                                      Radius.circular(5.0)),
+                                                      const BorderRadius.all(
+                                                          Radius.circular(5.0)),
                                                   child: Image.asset(
                                                       'assets/images/pexels-ben-kirby-10901842.jpg',
                                                       fit: BoxFit.cover,
@@ -1030,9 +1103,10 @@ class _HomeState extends State<Home> {
                                                   height: 220.0,
                                                   decoration: BoxDecoration(
                                                       borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(
-                                                              5.0)),
+                                                          const BorderRadius
+                                                                  .all(
+                                                              Radius.circular(
+                                                                  5.0)),
                                                       color: Colors.black,
                                                       gradient: LinearGradient(
                                                         begin: FractionalOffset
@@ -1078,7 +1152,8 @@ class _HomeState extends State<Home> {
                                     color: Colors.purple.shade50,
                                   ),
                                   child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         InkWell(
                                           splashColor: Colors.white,
@@ -1089,8 +1164,8 @@ class _HomeState extends State<Home> {
                                               children: [
                                                 ClipRRect(
                                                   borderRadius:
-                                                  const BorderRadius.all(
-                                                      Radius.circular(5.0)),
+                                                      const BorderRadius.all(
+                                                          Radius.circular(5.0)),
                                                   child: Image.asset(
                                                       'assets/images/pexels-johnmark-smith-301987.jpg',
                                                       fit: BoxFit.cover,
@@ -1101,9 +1176,10 @@ class _HomeState extends State<Home> {
                                                   height: 110.0,
                                                   decoration: BoxDecoration(
                                                       borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(
-                                                              5.0)),
+                                                          const BorderRadius
+                                                                  .all(
+                                                              Radius.circular(
+                                                                  5.0)),
                                                       color: Colors.black,
                                                       gradient: LinearGradient(
                                                         begin: FractionalOffset
@@ -1143,7 +1219,8 @@ class _HomeState extends State<Home> {
                                     color: Colors.purple.shade50,
                                   ),
                                   child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         InkWell(
                                           splashColor: Colors.white,
@@ -1154,8 +1231,8 @@ class _HomeState extends State<Home> {
                                               children: [
                                                 ClipRRect(
                                                   borderRadius:
-                                                  const BorderRadius.all(
-                                                      Radius.circular(5.0)),
+                                                      const BorderRadius.all(
+                                                          Radius.circular(5.0)),
                                                   child: Image.asset(
                                                       'assets/images/pexels-jonathan-petersson-399610.jpg',
                                                       fit: BoxFit.cover,
@@ -1166,9 +1243,10 @@ class _HomeState extends State<Home> {
                                                   height: 105.0,
                                                   decoration: BoxDecoration(
                                                       borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(
-                                                              5.0)),
+                                                          const BorderRadius
+                                                                  .all(
+                                                              Radius.circular(
+                                                                  5.0)),
                                                       color: Colors.black,
                                                       gradient: LinearGradient(
                                                         begin: FractionalOffset
@@ -1205,9 +1283,9 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-          // ----------------------------Events ------------------------
+
+          // ----------------------------Events--------------------------------------------//
           Expanded(
-            flex: 3,
             child: Row(
               children: [
                 const SizedBox(
@@ -1220,7 +1298,8 @@ class _HomeState extends State<Home> {
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.purple.shade50,
-                      borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(10.0)),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -1230,7 +1309,7 @@ class _HomeState extends State<Home> {
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius:
-                              const BorderRadius.all(Radius.circular(10)),
+                                  const BorderRadius.all(Radius.circular(10)),
                               color: Colors.purple.shade50,
                             ),
                             child: Padding(
@@ -1280,7 +1359,8 @@ class _HomeState extends State<Home> {
                                             color: Colors.deepPurple.shade500,
                                           ),
                                           title: const Text('Google Inc.'),
-                                          subtitle: const Text('Project Manager'),
+                                          subtitle:
+                                              const Text('Project Manager'),
                                         ),
                                       ),
                                     ]),
@@ -1303,8 +1383,8 @@ class _HomeState extends State<Home> {
                                             color: Colors.deepPurple.shade500,
                                           ),
                                           title: const Text('Facebook'),
-                                          subtitle:
-                                          const Text('Interaction Designer'),
+                                          subtitle: const Text(
+                                              'Interaction Designer'),
                                         ),
                                       ),
                                     ]),
@@ -1327,7 +1407,8 @@ class _HomeState extends State<Home> {
                                             color: Colors.deepPurple.shade500,
                                           ),
                                           title: const Text('Youtube'),
-                                          subtitle: const Text('Concept Artist'),
+                                          subtitle:
+                                              const Text('Concept Artist'),
                                         ),
                                       ),
                                     ]),
@@ -1374,7 +1455,7 @@ class _HomeState extends State<Home> {
                                           ),
                                           title: const Text('Ubisoft'),
                                           subtitle:
-                                          const Text('Creative Director'),
+                                              const Text('Creative Director'),
                                         ),
                                       ),
                                     ]),
@@ -1388,7 +1469,7 @@ class _HomeState extends State<Home> {
                                   autoPlayCurve: Curves.fastOutSlowIn,
                                   enableInfiniteScroll: true,
                                   autoPlayAnimationDuration:
-                                  const Duration(milliseconds: 800),
+                                      const Duration(milliseconds: 800),
                                   viewportFraction: 1,
                                 ),
                               ),
@@ -1410,7 +1491,8 @@ class _HomeState extends State<Home> {
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.purple.shade50,
-                      borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(10.0)),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -1420,7 +1502,7 @@ class _HomeState extends State<Home> {
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius:
-                              const BorderRadius.all(Radius.circular(10)),
+                                  const BorderRadius.all(Radius.circular(10)),
                               color: Colors.purple.shade50,
                             ),
                             child: Padding(
@@ -1457,15 +1539,18 @@ class _HomeState extends State<Home> {
                             decoration: BoxDecoration(
                               border: Border.all(),
                               borderRadius:
-                              const BorderRadius.all(Radius.circular(10.0)),
+                                  const BorderRadius.all(Radius.circular(10.0)),
                               color: Colors.white60,
                             ),
                             child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                children:const [ Text('Oops ... There are no activities',textAlign: TextAlign.center,),
-                                ]
-                            ),
+                                children: const [
+                                  Text(
+                                    'Oops ... There are no activities',
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ]),
                           ),
                         ),
                         const SizedBox(
@@ -1482,44 +1567,46 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-          // ----------------------------Latest Jobs and Activities ------------------------
-          const SizedBox(
-            height: 5,
-          ),
+          //----------------------------Latest Jobs and Activities ------------------------//
         ],
-      ), //----------------------------------------------Home----------------------------------//
-      Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: const [
-          SizedBox(
-            height: 10,
-          ),
-        ],
-      ), //----------------------------------------------Jobs----------------------------------//
-      Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: const [
-          SizedBox(
-            height: 10,
-          ),
-        ],
-      ), //----------------------------------------------Company----------------------------------//
-      Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: const [
-          SizedBox(
-            height: 10,
-          ),
-        ],
-      ), //----------------------------------------------Progression----------------------------------//
-      Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: const [
-          SizedBox(
-            height: 10,
-          ),
-        ],
-      ), //----------------------------------------------More----------------------------------//
+      ),
+      // //----------------------------------------------Home----------------------------------//
+      // Column(
+      //   mainAxisAlignment: MainAxisAlignment.start,
+      //   children: const [
+      //     SizedBox(
+      //       height: 10,
+      //     ),
+      //   ],
+      // ),
+      // //----------------------------------------------Jobs----------------------------------//
+      // Column(
+      //   mainAxisAlignment: MainAxisAlignment.start,
+      //   children: const [
+      //     SizedBox(
+      //       height: 10,
+      //     ),
+      //   ],
+      // ),
+      // //----------------------------------------------Company----------------------------------//
+      // Column(
+      //   mainAxisAlignment: MainAxisAlignment.start,
+      //   children: const [
+      //     SizedBox(
+      //       height: 10,
+      //     ),
+      //   ],
+      // ),
+      // //----------------------------------------------Progression----------------------------------//
+      // Column(
+      //   mainAxisAlignment: MainAxisAlignment.start,
+      //   children: const [
+      //     SizedBox(
+      //       height: 10,
+      //     ),
+      //   ],
+      // ),
+      // //----------------------------------------------More----------------------------------//
     ];
     return Scaffold(
       body: pageSelection[selectedPage],
@@ -1533,7 +1620,7 @@ class _HomeState extends State<Home> {
         ),
         title: const Text(
           'Hiring Academy',
-          style: TextStyle(fontFamily: 'Cabin', fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
         leading: IconButton(
           icon: const Icon(
@@ -1552,8 +1639,8 @@ class _HomeState extends State<Home> {
               ),
               onPressed: () {
                 Navigator.pushNamed(context, '/login');
-              }
-          )],
+              })
+        ],
       ),
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
@@ -1561,7 +1648,7 @@ class _HomeState extends State<Home> {
           canvasColor: elementcolor,
         ),
         child: BottomNavigationBar(
-            currentIndex: selectedPage,
+          currentIndex: selectedPage,
           type: BottomNavigationBarType.fixed,
           showSelectedLabels: false,
           showUnselectedLabels: false,

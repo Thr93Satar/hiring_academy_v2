@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hiring_academy_v2/Recover_account.dart';
 import 'package:hiring_academy_v2/event.dart';
 import 'package:hiring_academy_v2/home_signed_in.dart';
 import 'package:hiring_academy_v2/more_events.dart';
 import 'package:hiring_academy_v2/news.dart';
+import 'package:hiring_academy_v2/otp_page.dart';
+import 'package:hiring_academy_v2/password_reset.dart';
+import 'package:hiring_academy_v2/password_reset_2.dart';
 // -------------------------------------------App-Main-Pages----------------------------------//
 import 'forgot_password.dart';
 import 'home.dart';
@@ -20,14 +24,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    List<Widget> bodies=[
-
-    ];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Hiring Academy',
       theme: ThemeData(
-        fontFamily: 'Cabin',
+        primarySwatch: themecolor,
+        fontFamily: 'cabin',
         scaffoldBackgroundColor: bodycolor,
       ),
       initialRoute: '/',
@@ -40,6 +42,11 @@ class MyApp extends StatelessWidget {
         '/more_news': (context) => const MoreN(),
         '/more_events': (context) => const MoreE(),
         '/forgot_password': (context) => const Password(),
+        '/password_reset': (context) => const P_reset(),
+        '/password_reset_2': (context) => const P_reset_2(),
+        '/recover_account': (context) => const RecoverAccount(),
+        '/otp_page': (context) => const OTP(),
+
       },
       locale: const Locale('en'),
       localizationsDelegates: const [
