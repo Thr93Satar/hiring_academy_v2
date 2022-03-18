@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'package:flutter/services.dart';
+import 'package:hiring_academy_v2/otp_confirmation.dart';
 import 'main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -8,8 +11,14 @@ class OTP extends StatefulWidget {
   @override
   State<OTP> createState() => _OTPState();
 }
-
 class _OTPState extends State<OTP> {
+
+  void initState() {
+    Timer(Duration(seconds: 4), (){
+      Navigator.pushReplacement(this.context, MaterialPageRoute(builder: (context)=>
+          const OTPCon()));
+    });
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +34,7 @@ class _OTPState extends State<OTP> {
         ),
       ),
       body: Center(
-        child: Column (
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -43,6 +52,9 @@ class _OTPState extends State<OTP> {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 10.0,
+            ),
             Expanded(
               flex: 1,
               child: SvgPicture.asset(
@@ -51,109 +63,168 @@ class _OTPState extends State<OTP> {
                 height: 60,
               ),
             ),
-            const Expanded(
-              flex: 1,
-                child: Padding(
-                  padding: EdgeInsets.only(top: 10.0),
-                  child: Text('Enter security code sent to your mobile device',
+            const SizedBox(
+              height: 10.0,
+            ),
+            Expanded(
+              flex: 2,
+              child: Column(
+                children: [
+                  const Text(
+                    'Enter security code sent to your mobile device',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                     ),
                   ),
-                ),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 60,
+                        child: TextField(
+                          inputFormatters: <TextInputFormatter>[
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
+                          keyboardType: TextInputType.number,
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                            fillColor: Colors.white,
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Colors.deepPurple, width: 4.0),
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Colors.deepPurple, width: 4.0),
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        width: 60,
+                        child: TextField(
+                          inputFormatters: <TextInputFormatter>[
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
+                          keyboardType: TextInputType.number,
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                            fillColor: Colors.white,
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Colors.deepPurple, width: 4.0),
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Colors.deepPurple, width: 4.0),
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        width: 60,
+                        child: TextField(
+                          inputFormatters: <TextInputFormatter>[
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
+                          keyboardType: TextInputType.number,
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                            fillColor: Colors.white,
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Colors.deepPurple, width: 4.0),
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Colors.deepPurple, width: 4.0),
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        width: 60,
+                        child: TextField(
+                          inputFormatters: <TextInputFormatter>[
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
+                          keyboardType: TextInputType.number,
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                            fillColor: Colors.white,
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Colors.deepPurple, width: 4.0),
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Colors.deepPurple, width: 4.0),
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
             Expanded(
-              flex: 3,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 100.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 60,
-                      child: TextField(
-                        textAlign: TextAlign.center,
-                        decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          filled: true,
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:  const BorderSide(color: Colors.deepPurple, width: 4.0),
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                          enabledBorder:  OutlineInputBorder(
-                            borderSide:  const BorderSide(color: Colors.deepPurple, width: 4.0),
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                        ),
+              flex: 2,
+              child: Column(
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      side: const BorderSide(color: Colors.white),
+                      primary: Colors.deepPurple.shade400,
+                      padding: const EdgeInsets.all(16),
+                    ),
+                    child: const Text('Resend',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
                       ),
                     ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Container(
-                      width: 60,
-                      child: TextField(
-                        textAlign: TextAlign.center,
-                        decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          filled: true,
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:  const BorderSide(color: Colors.deepPurple, width: 4.0),
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                          enabledBorder:  OutlineInputBorder(
-                            borderSide:  const BorderSide(color: Colors.deepPurple, width: 4.0),
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Container(
-                      width: 60,
-                      child: TextField(
-                        textAlign: TextAlign.center,
-                        decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          filled: true,
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:  const BorderSide(color: Colors.deepPurple, width: 4.0),
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                          enabledBorder:  OutlineInputBorder(
-                            borderSide:  const BorderSide(color: Colors.deepPurple, width: 4.0),
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Container(
-                      width: 60,
-                      child: TextField(
-                        textAlign: TextAlign.center,
-                        decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          filled: true,
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:  const BorderSide(color: Colors.deepPurple, width: 4.0),
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                          enabledBorder:  OutlineInputBorder(
-                            borderSide:  const BorderSide(color: Colors.deepPurple, width: 4.0),
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
+                  const Text('Timer : - - : - -',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontFamily: 'Cabin',
+                      fontWeight: FontWeight.bold,
+                      overflow: TextOverflow.clip,
+                    ),),
+                ],
               ),
             ),
             const Spacer(
@@ -202,3 +273,4 @@ class _OTPState extends State<OTP> {
     );
   }
 }
+

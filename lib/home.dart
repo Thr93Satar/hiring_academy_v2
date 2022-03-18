@@ -546,743 +546,743 @@ class _HomeState extends State<Home> {
           ),
 
           // ----------------------------What's New -------------------------------------- //
-          Expanded(
-            child: Row(
-              children: [
-                const SizedBox(
-                  //---------------------- padding right --------------------//
-                  width: 10,
-                ),
-                Expanded(
-                  //--------------------------------------Events Section ----------------------------//
-                  child: ListView(
-                      //------------------------- Listview Start --------------------//
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        Column(
-                          //----------------------------------Vertical box--------------------------//
-                          children: [
-                            SizedBox(
-                              height: 220,
-                              width: 120,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(10)),
-                                  color: Colors.purple.shade50,
-                                ),
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      const Text(
-                                        "Events",
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 18,
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 2,
-                                      ),
-                                      Icon(
-                                        MdiIcons.satelliteUplink,
-                                        size: 40,
-                                        color: Colors.deepPurple.shade500,
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(top: 40.0),
-                                        child: ElevatedButton(
-                                            onPressed: () {
-                                              Navigator.pushNamed(
-                                                  context, '/more_events');
-                                            },
-                                            style: ButtonStyle(
-                                              backgroundColor:
-                                                  MaterialStateProperty.all<
-                                                      Color>(
-                                                Colors.deepPurple.shade500,
-                                              ),
-                                            ),
-                                            child: const Text('See All')),
-                                      )
-                                    ]),
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          //---------------------- padding right --------------------//
-                          width: 5,
-                        ),
-                        Column(
-                          //----------------------------------Horiz boxes--------------------------//
-                          children: [
-                            SizedBox(
-                                height: 105,
-                                width: 140,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(5.0)),
-                                    color: Colors.purple.shade50,
-                                  ),
-                                  child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        InkWell(
-                                          splashColor: Colors.white,
-                                          onTap: () {
-                                            Navigator.pushNamed(
-                                                context, '/event');
-                                          },
-                                          child: Stack(
-                                              alignment: AlignmentDirectional
-                                                  .bottomCenter,
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(5.0)),
-                                                  child: Image.asset(
-                                                      'assets/images/pexels-luis-quintero-2774556.jpg',
-                                                      fit: BoxFit.cover,
-                                                      width: 180.0,
-                                                      height: 105.0),
-                                                ),
-                                                Container(
-                                                  height: 105.0,
-                                                  decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          const BorderRadius
-                                                                  .all(
-                                                              Radius.circular(
-                                                                  5.0)),
-                                                      color: Colors.black,
-                                                      gradient: LinearGradient(
-                                                        begin: FractionalOffset
-                                                            .center,
-                                                        end: FractionalOffset
-                                                            .bottomCenter,
-                                                        colors: [
-                                                          Colors.grey
-                                                              .withOpacity(0.0),
-                                                          Colors.black,
-                                                        ],
-                                                      )),
-                                                ),
-                                                const Padding(
-                                                  padding: EdgeInsets.only(
-                                                      bottom: 5.0),
-                                                  child: Text(
-                                                    'UX/UI Sessions',
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                  ),
-                                                ),
-                                              ]),
-                                        ),
-                                      ]),
-                                )),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            SizedBox(
-                                height: 110,
-                                width: 140,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(5.0)),
-                                    color: Colors.purple.shade50,
-                                  ),
-                                  child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        InkWell(
-                                          splashColor: Colors.white,
-                                          onTap: () {},
-                                          child: Stack(
-                                              alignment: AlignmentDirectional
-                                                  .bottomCenter,
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(5.0)),
-                                                  child: Image.asset(
-                                                      'assets/images/pexels-matheus-bertelli-3321793.jpg',
-                                                      fit: BoxFit.cover,
-                                                      width: 180.0,
-                                                      height: 110.0),
-                                                ),
-                                                Container(
-                                                  height: 110.0,
-                                                  decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          const BorderRadius
-                                                                  .all(
-                                                              Radius.circular(
-                                                                  5.0)),
-                                                      color: Colors.black,
-                                                      gradient: LinearGradient(
-                                                        begin: FractionalOffset
-                                                            .center,
-                                                        end: FractionalOffset
-                                                            .bottomCenter,
-                                                        colors: [
-                                                          Colors.grey
-                                                              .withOpacity(0.0),
-                                                          Colors.black,
-                                                        ],
-                                                      )),
-                                                ),
-                                                const Padding(
-                                                  padding: EdgeInsets.only(
-                                                      bottom: 5.0),
-                                                  child: Text(
-                                                    'General Talk',
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                  ),
-                                                ),
-                                              ]),
-                                        ),
-                                      ]),
-                                )),
-                          ],
-                        ),
-                        const SizedBox(
-                          //---------------------- padding right --------------------//
-                          width: 5,
-                        ),
-                        Column(
-                          //----------------------------------Vertical boxes--------------------------//
-                          children: [
-                            SizedBox(
-                                height: 220,
-                                width: 140,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(5.0)),
-                                    color: Colors.purple.shade50,
-                                  ),
-                                  child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        InkWell(
-                                          splashColor: Colors.white,
-                                          onTap: () {},
-                                          child: Stack(
-                                              alignment: AlignmentDirectional
-                                                  .bottomCenter,
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(5.0)),
-                                                  child: Image.asset(
-                                                      'assets/images/pexels-antoni-shkraba-4348403.jpg',
-                                                      fit: BoxFit.cover,
-                                                      width: 180.0,
-                                                      height: 220.0),
-                                                ),
-                                                Container(
-                                                  height: 220.0,
-                                                  decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          const BorderRadius
-                                                                  .all(
-                                                              Radius.circular(
-                                                                  5.0)),
-                                                      color: Colors.black,
-                                                      gradient: LinearGradient(
-                                                        begin: FractionalOffset
-                                                            .center,
-                                                        end: FractionalOffset
-                                                            .bottomCenter,
-                                                        colors: [
-                                                          Colors.grey
-                                                              .withOpacity(0.0),
-                                                          Colors.black,
-                                                        ],
-                                                      )),
-                                                ),
-                                                const Padding(
-                                                  padding: EdgeInsets.only(
-                                                      bottom: 5.0),
-                                                  child: Text(
-                                                    'Talking Tech Event',
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                  ),
-                                                ),
-                                              ]),
-                                        ),
-                                      ]),
-                                )),
-                          ],
-                        ),
-                        const SizedBox(
-                          //---------------------- padding right --------------------//
-                          width: 5,
-                        ),
-                        Column(
-                          //----------------------------------Horiz boxes--------------------------//
-                          children: [
-                            Row(
-                              //----------------------------------Horiz boxes--------------------------//
-                              children: [
-                                SizedBox(
-                                    height: 105,
-                                    width: 140,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: const BorderRadius.all(
-                                            Radius.circular(5.0)),
-                                        color: Colors.purple.shade50,
-                                      ),
-                                      child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            InkWell(
-                                              splashColor: Colors.white,
-                                              onTap: () {},
-                                              child: Stack(
-                                                  alignment:
-                                                      AlignmentDirectional
-                                                          .bottomCenter,
-                                                  children: [
-                                                    ClipRRect(
-                                                      borderRadius:
-                                                          const BorderRadius
-                                                                  .all(
-                                                              Radius.circular(
-                                                                  5.0)),
-                                                      child: Image.asset(
-                                                          'assets/images/pexels-josh-sorenson-976866.jpg',
-                                                          fit: BoxFit.cover,
-                                                          width: 180.0,
-                                                          height: 105.0),
-                                                    ),
-                                                    Container(
-                                                      height: 105.0,
-                                                      decoration: BoxDecoration(
-                                                          borderRadius:
-                                                              const BorderRadius
-                                                                      .all(
-                                                                  Radius
-                                                                      .circular(
-                                                                          5.0)),
-                                                          color: Colors.black,
-                                                          gradient:
-                                                              LinearGradient(
-                                                            begin:
-                                                                FractionalOffset
-                                                                    .center,
-                                                            end: FractionalOffset
-                                                                .bottomCenter,
-                                                            colors: [
-                                                              Colors.grey
-                                                                  .withOpacity(
-                                                                      0.0),
-                                                              Colors.black,
-                                                            ],
-                                                          )),
-                                                    ),
-                                                    const Padding(
-                                                      padding: EdgeInsets.only(
-                                                          bottom: 5.0),
-                                                      child: Text(
-                                                        'ScoreArena Festival',
-                                                        style: TextStyle(
-                                                            color:
-                                                                Colors.white),
-                                                      ),
-                                                    ),
-                                                  ]),
-                                            ),
-                                          ]),
-                                    )),
-                                const SizedBox(
-                                  width: 5,
-                                ),
-                                SizedBox(
-                                    height: 105,
-                                    width: 140,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: const BorderRadius.all(
-                                            Radius.circular(5.0)),
-                                        color: Colors.purple.shade50,
-                                      ),
-                                      child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            InkWell(
-                                              splashColor: Colors.white,
-                                              onTap: () {},
-                                              child: Stack(
-                                                  alignment:
-                                                      AlignmentDirectional
-                                                          .bottomCenter,
-                                                  children: [
-                                                    ClipRRect(
-                                                      borderRadius:
-                                                          const BorderRadius
-                                                                  .all(
-                                                              Radius.circular(
-                                                                  5.0)),
-                                                      child: Image.asset(
-                                                          'assets/images/pexels-stefan-lorentz-668137.jpg',
-                                                          fit: BoxFit.cover,
-                                                          width: 180.0,
-                                                          height: 105.0),
-                                                    ),
-                                                    Container(
-                                                      height: 105.0,
-                                                      decoration: BoxDecoration(
-                                                          borderRadius:
-                                                              const BorderRadius
-                                                                      .all(
-                                                                  Radius
-                                                                      .circular(
-                                                                          5.0)),
-                                                          color: Colors.black,
-                                                          gradient:
-                                                              LinearGradient(
-                                                            begin:
-                                                                FractionalOffset
-                                                                    .center,
-                                                            end:
-                                                                FractionalOffset
-                                                                    .topCenter,
-                                                            colors: [
-                                                              Colors.grey
-                                                                  .withOpacity(
-                                                                      0.0),
-                                                              Colors.black,
-                                                            ],
-                                                          )),
-                                                    ),
-                                                    const Padding(
-                                                      padding: EdgeInsets.only(
-                                                          bottom: 85.0),
-                                                      child: Text(
-                                                        'Reading Day',
-                                                        style: TextStyle(
-                                                            overflow:
-                                                                TextOverflow
-                                                                    .ellipsis,
-                                                            color:
-                                                                Colors.white),
-                                                      ),
-                                                    ),
-                                                  ]),
-                                            ),
-                                          ]),
-                                    )),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            SizedBox(
-                                //----------------------------------HorizBox--------------------------//
-                                height: 110,
-                                width: 285,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(5.0)),
-                                    color: Colors.purple.shade50,
-                                  ),
-                                  child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        InkWell(
-                                          splashColor: Colors.white,
-                                          onTap: () {},
-                                          child: Stack(
-                                              alignment: AlignmentDirectional
-                                                  .bottomCenter,
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(5.0)),
-                                                  child: Image.asset(
-                                                      'assets/images/pexels-teddy-yang-2263436.jpg',
-                                                      fit: BoxFit.cover,
-                                                      width: 285.0,
-                                                      height: 110.0),
-                                                ),
-                                                Container(
-                                                  height: 110.0,
-                                                  decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          const BorderRadius
-                                                                  .all(
-                                                              Radius.circular(
-                                                                  5.0)),
-                                                      color: Colors.black,
-                                                      gradient: LinearGradient(
-                                                        begin: FractionalOffset
-                                                            .center,
-                                                        end: FractionalOffset
-                                                            .bottomCenter,
-                                                        colors: [
-                                                          Colors.grey
-                                                              .withOpacity(0.0),
-                                                          Colors.black,
-                                                        ],
-                                                      )),
-                                                ),
-                                                const Padding(
-                                                  padding: EdgeInsets.only(
-                                                      right: 160, bottom: 5.0),
-                                                  child: Text(
-                                                    'Music celebration',
-                                                    textAlign: TextAlign.start,
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                  ),
-                                                ),
-                                              ]),
-                                        ),
-                                      ]),
-                                )),
-                          ],
-                        ),
-                        const SizedBox(
-                          //---------------------- padding right --------------------//
-                          width: 5,
-                        ),
-                        Column(
-                          //----------------------------------Vertical boxes--------------------------//
-                          children: [
-                            SizedBox(
-                                height: 220,
-                                width: 140,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(5.0)),
-                                    color: Colors.purple.shade50,
-                                  ),
-                                  child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        InkWell(
-                                          splashColor: Colors.white,
-                                          onTap: () {},
-                                          child: Stack(
-                                              alignment: AlignmentDirectional
-                                                  .bottomCenter,
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(5.0)),
-                                                  child: Image.asset(
-                                                      'assets/images/pexels-ben-kirby-10901842.jpg',
-                                                      fit: BoxFit.cover,
-                                                      width: 180.0,
-                                                      height: 220.0),
-                                                ),
-                                                Container(
-                                                  height: 220.0,
-                                                  decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          const BorderRadius
-                                                                  .all(
-                                                              Radius.circular(
-                                                                  5.0)),
-                                                      color: Colors.black,
-                                                      gradient: LinearGradient(
-                                                        begin: FractionalOffset
-                                                            .center,
-                                                        end: FractionalOffset
-                                                            .bottomCenter,
-                                                        colors: [
-                                                          Colors.grey
-                                                              .withOpacity(0.0),
-                                                          Colors.black,
-                                                        ],
-                                                      )),
-                                                ),
-                                                const Padding(
-                                                  padding: EdgeInsets.only(
-                                                      bottom: 5.0),
-                                                  child: Text(
-                                                    'Chinatown Events',
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                  ),
-                                                ),
-                                              ]),
-                                        ),
-                                      ]),
-                                )),
-                          ],
-                        ),
-                        const SizedBox(
-                          //---------------------- padding right --------------------//
-                          width: 5,
-                        ),
-                        Column(
-                          //----------------------------------Horiz boxes--------------------------//
-                          children: [
-                            SizedBox(
-                                height: 110,
-                                width: 140,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(5.0)),
-                                    color: Colors.purple.shade50,
-                                  ),
-                                  child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        InkWell(
-                                          splashColor: Colors.white,
-                                          onTap: () {},
-                                          child: Stack(
-                                              alignment: AlignmentDirectional
-                                                  .bottomCenter,
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(5.0)),
-                                                  child: Image.asset(
-                                                      'assets/images/pexels-johnmark-smith-301987.jpg',
-                                                      fit: BoxFit.cover,
-                                                      width: 180.0,
-                                                      height: 110.0),
-                                                ),
-                                                Container(
-                                                  height: 110.0,
-                                                  decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          const BorderRadius
-                                                                  .all(
-                                                              Radius.circular(
-                                                                  5.0)),
-                                                      color: Colors.black,
-                                                      gradient: LinearGradient(
-                                                        begin: FractionalOffset
-                                                            .center,
-                                                        end: FractionalOffset
-                                                            .topCenter,
-                                                        colors: [
-                                                          Colors.grey
-                                                              .withOpacity(0.0),
-                                                          Colors.black,
-                                                        ],
-                                                      )),
-                                                ),
-                                                const Padding(
-                                                  padding: EdgeInsets.only(
-                                                      bottom: 85.0),
-                                                  child: Text(
-                                                    'Science Lecture',
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                  ),
-                                                ),
-                                              ]),
-                                        ),
-                                      ]),
-                                )),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            SizedBox(
-                                height: 105,
-                                width: 140,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(5.0)),
-                                    color: Colors.purple.shade50,
-                                  ),
-                                  child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        InkWell(
-                                          splashColor: Colors.white,
-                                          onTap: () {},
-                                          child: Stack(
-                                              alignment: AlignmentDirectional
-                                                  .bottomCenter,
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(5.0)),
-                                                  child: Image.asset(
-                                                      'assets/images/pexels-jonathan-petersson-399610.jpg',
-                                                      fit: BoxFit.cover,
-                                                      width: 180.0,
-                                                      height: 105.0),
-                                                ),
-                                                Container(
-                                                  height: 105.0,
-                                                  decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          const BorderRadius
-                                                                  .all(
-                                                              Radius.circular(
-                                                                  5.0)),
-                                                      color: Colors.black,
-                                                      gradient: LinearGradient(
-                                                        begin: FractionalOffset
-                                                            .center,
-                                                        end: FractionalOffset
-                                                            .topCenter,
-                                                        colors: [
-                                                          Colors.grey
-                                                              .withOpacity(0.0),
-                                                          Colors.black,
-                                                        ],
-                                                      )),
-                                                ),
-                                                const Padding(
-                                                  padding: EdgeInsets.only(
-                                                      bottom: 85.0),
-                                                  child: Text(
-                                                    'National Day',
-                                                    style: TextStyle(
-                                                        color: Colors.white),
-                                                  ),
-                                                ),
-                                              ]),
-                                        ),
-                                      ]),
-                                )),
-                          ],
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        )
-                      ]), // ------------------------End of ListView Elements --------------------------//
-                ),
-              ],
-            ),
-          ),
+          // Expanded(
+          //   child: Row(
+          //     children: [
+          //       const SizedBox(
+          //         //---------------------- padding right --------------------//
+          //         width: 10,
+          //       ),
+          //       Expanded(
+          //         //--------------------------------------Events Section ----------------------------//
+          //         child: ListView(
+          //             //------------------------- Listview Start --------------------//
+          //             shrinkWrap: true,
+          //             scrollDirection: Axis.horizontal,
+          //             children: [
+          //               Column(
+          //                 //----------------------------------Vertical box--------------------------//
+          //                 children: [
+          //                   SizedBox(
+          //                     height: 220,
+          //                     width: 120,
+          //                     child: Container(
+          //                       decoration: BoxDecoration(
+          //                         borderRadius: const BorderRadius.all(
+          //                             Radius.circular(10)),
+          //                         color: Colors.purple.shade50,
+          //                       ),
+          //                       child: Column(
+          //                           mainAxisAlignment: MainAxisAlignment.end,
+          //                           children: [
+          //                             const Text(
+          //                               "Events",
+          //                               style: TextStyle(
+          //                                 fontWeight: FontWeight.w600,
+          //                                 fontSize: 18,
+          //                               ),
+          //                             ),
+          //                             const SizedBox(
+          //                               height: 2,
+          //                             ),
+          //                             Icon(
+          //                               MdiIcons.satelliteUplink,
+          //                               size: 40,
+          //                               color: Colors.deepPurple.shade500,
+          //                             ),
+          //                             Padding(
+          //                               padding:
+          //                                   const EdgeInsets.only(top: 40.0),
+          //                               child: ElevatedButton(
+          //                                   onPressed: () {
+          //                                     Navigator.pushNamed(
+          //                                         context, '/more_events');
+          //                                   },
+          //                                   style: ButtonStyle(
+          //                                     backgroundColor:
+          //                                         MaterialStateProperty.all<
+          //                                             Color>(
+          //                                       Colors.deepPurple.shade500,
+          //                                     ),
+          //                                   ),
+          //                                   child: const Text('See All')),
+          //                             )
+          //                           ]),
+          //                     ),
+          //                   ),
+          //                 ],
+          //               ),
+          //               const SizedBox(
+          //                 //---------------------- padding right --------------------//
+          //                 width: 5,
+          //               ),
+          //               Column(
+          //                 //----------------------------------Horiz boxes--------------------------//
+          //                 children: [
+          //                   SizedBox(
+          //                       height: 105,
+          //                       width: 140,
+          //                       child: Container(
+          //                         decoration: BoxDecoration(
+          //                           borderRadius: const BorderRadius.all(
+          //                               Radius.circular(5.0)),
+          //                           color: Colors.purple.shade50,
+          //                         ),
+          //                         child: Column(
+          //                             mainAxisAlignment:
+          //                                 MainAxisAlignment.center,
+          //                             children: [
+          //                               InkWell(
+          //                                 splashColor: Colors.white,
+          //                                 onTap: () {
+          //                                   Navigator.pushNamed(
+          //                                       context, '/event');
+          //                                 },
+          //                                 child: Stack(
+          //                                     alignment: AlignmentDirectional
+          //                                         .bottomCenter,
+          //                                     children: [
+          //                                       ClipRRect(
+          //                                         borderRadius:
+          //                                             const BorderRadius.all(
+          //                                                 Radius.circular(5.0)),
+          //                                         child: Image.asset(
+          //                                             'assets/images/pexels-luis-quintero-2774556.jpg',
+          //                                             fit: BoxFit.cover,
+          //                                             width: 180.0,
+          //                                             height: 105.0),
+          //                                       ),
+          //                                       Container(
+          //                                         height: 105.0,
+          //                                         decoration: BoxDecoration(
+          //                                             borderRadius:
+          //                                                 const BorderRadius
+          //                                                         .all(
+          //                                                     Radius.circular(
+          //                                                         5.0)),
+          //                                             color: Colors.black,
+          //                                             gradient: LinearGradient(
+          //                                               begin: FractionalOffset
+          //                                                   .center,
+          //                                               end: FractionalOffset
+          //                                                   .bottomCenter,
+          //                                               colors: [
+          //                                                 Colors.grey
+          //                                                     .withOpacity(0.0),
+          //                                                 Colors.black,
+          //                                               ],
+          //                                             )),
+          //                                       ),
+          //                                       const Padding(
+          //                                         padding: EdgeInsets.only(
+          //                                             bottom: 5.0),
+          //                                         child: Text(
+          //                                           'UX/UI Sessions',
+          //                                           style: TextStyle(
+          //                                               color: Colors.white),
+          //                                         ),
+          //                                       ),
+          //                                     ]),
+          //                               ),
+          //                             ]),
+          //                       )),
+          //                   const SizedBox(
+          //                     height: 5,
+          //                   ),
+          //                   SizedBox(
+          //                       height: 110,
+          //                       width: 140,
+          //                       child: Container(
+          //                         decoration: BoxDecoration(
+          //                           borderRadius: const BorderRadius.all(
+          //                               Radius.circular(5.0)),
+          //                           color: Colors.purple.shade50,
+          //                         ),
+          //                         child: Column(
+          //                             mainAxisAlignment:
+          //                                 MainAxisAlignment.center,
+          //                             children: [
+          //                               InkWell(
+          //                                 splashColor: Colors.white,
+          //                                 onTap: () {},
+          //                                 child: Stack(
+          //                                     alignment: AlignmentDirectional
+          //                                         .bottomCenter,
+          //                                     children: [
+          //                                       ClipRRect(
+          //                                         borderRadius:
+          //                                             const BorderRadius.all(
+          //                                                 Radius.circular(5.0)),
+          //                                         child: Image.asset(
+          //                                             'assets/images/pexels-matheus-bertelli-3321793.jpg',
+          //                                             fit: BoxFit.cover,
+          //                                             width: 180.0,
+          //                                             height: 110.0),
+          //                                       ),
+          //                                       Container(
+          //                                         height: 110.0,
+          //                                         decoration: BoxDecoration(
+          //                                             borderRadius:
+          //                                                 const BorderRadius
+          //                                                         .all(
+          //                                                     Radius.circular(
+          //                                                         5.0)),
+          //                                             color: Colors.black,
+          //                                             gradient: LinearGradient(
+          //                                               begin: FractionalOffset
+          //                                                   .center,
+          //                                               end: FractionalOffset
+          //                                                   .bottomCenter,
+          //                                               colors: [
+          //                                                 Colors.grey
+          //                                                     .withOpacity(0.0),
+          //                                                 Colors.black,
+          //                                               ],
+          //                                             )),
+          //                                       ),
+          //                                       const Padding(
+          //                                         padding: EdgeInsets.only(
+          //                                             bottom: 5.0),
+          //                                         child: Text(
+          //                                           'General Talk',
+          //                                           style: TextStyle(
+          //                                               color: Colors.white),
+          //                                         ),
+          //                                       ),
+          //                                     ]),
+          //                               ),
+          //                             ]),
+          //                       )),
+          //                 ],
+          //               ),
+          //               const SizedBox(
+          //                 //---------------------- padding right --------------------//
+          //                 width: 5,
+          //               ),
+          //               Column(
+          //                 //----------------------------------Vertical boxes--------------------------//
+          //                 children: [
+          //                   SizedBox(
+          //                       height: 220,
+          //                       width: 140,
+          //                       child: Container(
+          //                         decoration: BoxDecoration(
+          //                           borderRadius: const BorderRadius.all(
+          //                               Radius.circular(5.0)),
+          //                           color: Colors.purple.shade50,
+          //                         ),
+          //                         child: Column(
+          //                             mainAxisAlignment:
+          //                                 MainAxisAlignment.center,
+          //                             children: [
+          //                               InkWell(
+          //                                 splashColor: Colors.white,
+          //                                 onTap: () {},
+          //                                 child: Stack(
+          //                                     alignment: AlignmentDirectional
+          //                                         .bottomCenter,
+          //                                     children: [
+          //                                       ClipRRect(
+          //                                         borderRadius:
+          //                                             const BorderRadius.all(
+          //                                                 Radius.circular(5.0)),
+          //                                         child: Image.asset(
+          //                                             'assets/images/pexels-antoni-shkraba-4348403.jpg',
+          //                                             fit: BoxFit.cover,
+          //                                             width: 180.0,
+          //                                             height: 220.0),
+          //                                       ),
+          //                                       Container(
+          //                                         height: 220.0,
+          //                                         decoration: BoxDecoration(
+          //                                             borderRadius:
+          //                                                 const BorderRadius
+          //                                                         .all(
+          //                                                     Radius.circular(
+          //                                                         5.0)),
+          //                                             color: Colors.black,
+          //                                             gradient: LinearGradient(
+          //                                               begin: FractionalOffset
+          //                                                   .center,
+          //                                               end: FractionalOffset
+          //                                                   .bottomCenter,
+          //                                               colors: [
+          //                                                 Colors.grey
+          //                                                     .withOpacity(0.0),
+          //                                                 Colors.black,
+          //                                               ],
+          //                                             )),
+          //                                       ),
+          //                                       const Padding(
+          //                                         padding: EdgeInsets.only(
+          //                                             bottom: 5.0),
+          //                                         child: Text(
+          //                                           'Talking Tech Event',
+          //                                           style: TextStyle(
+          //                                               color: Colors.white),
+          //                                         ),
+          //                                       ),
+          //                                     ]),
+          //                               ),
+          //                             ]),
+          //                       )),
+          //                 ],
+          //               ),
+          //               const SizedBox(
+          //                 //---------------------- padding right --------------------//
+          //                 width: 5,
+          //               ),
+          //               Column(
+          //                 //----------------------------------Horiz boxes--------------------------//
+          //                 children: [
+          //                   Row(
+          //                     //----------------------------------Horiz boxes--------------------------//
+          //                     children: [
+          //                       SizedBox(
+          //                           height: 105,
+          //                           width: 140,
+          //                           child: Container(
+          //                             decoration: BoxDecoration(
+          //                               borderRadius: const BorderRadius.all(
+          //                                   Radius.circular(5.0)),
+          //                               color: Colors.purple.shade50,
+          //                             ),
+          //                             child: Column(
+          //                                 mainAxisAlignment:
+          //                                     MainAxisAlignment.center,
+          //                                 children: [
+          //                                   InkWell(
+          //                                     splashColor: Colors.white,
+          //                                     onTap: () {},
+          //                                     child: Stack(
+          //                                         alignment:
+          //                                             AlignmentDirectional
+          //                                                 .bottomCenter,
+          //                                         children: [
+          //                                           ClipRRect(
+          //                                             borderRadius:
+          //                                                 const BorderRadius
+          //                                                         .all(
+          //                                                     Radius.circular(
+          //                                                         5.0)),
+          //                                             child: Image.asset(
+          //                                                 'assets/images/pexels-josh-sorenson-976866.jpg',
+          //                                                 fit: BoxFit.cover,
+          //                                                 width: 180.0,
+          //                                                 height: 105.0),
+          //                                           ),
+          //                                           Container(
+          //                                             height: 105.0,
+          //                                             decoration: BoxDecoration(
+          //                                                 borderRadius:
+          //                                                     const BorderRadius
+          //                                                             .all(
+          //                                                         Radius
+          //                                                             .circular(
+          //                                                                 5.0)),
+          //                                                 color: Colors.black,
+          //                                                 gradient:
+          //                                                     LinearGradient(
+          //                                                   begin:
+          //                                                       FractionalOffset
+          //                                                           .center,
+          //                                                   end: FractionalOffset
+          //                                                       .bottomCenter,
+          //                                                   colors: [
+          //                                                     Colors.grey
+          //                                                         .withOpacity(
+          //                                                             0.0),
+          //                                                     Colors.black,
+          //                                                   ],
+          //                                                 )),
+          //                                           ),
+          //                                           const Padding(
+          //                                             padding: EdgeInsets.only(
+          //                                                 bottom: 5.0),
+          //                                             child: Text(
+          //                                               'ScoreArena Festival',
+          //                                               style: TextStyle(
+          //                                                   color:
+          //                                                       Colors.white),
+          //                                             ),
+          //                                           ),
+          //                                         ]),
+          //                                   ),
+          //                                 ]),
+          //                           )),
+          //                       const SizedBox(
+          //                         width: 5,
+          //                       ),
+          //                       SizedBox(
+          //                           height: 105,
+          //                           width: 140,
+          //                           child: Container(
+          //                             decoration: BoxDecoration(
+          //                               borderRadius: const BorderRadius.all(
+          //                                   Radius.circular(5.0)),
+          //                               color: Colors.purple.shade50,
+          //                             ),
+          //                             child: Column(
+          //                                 mainAxisAlignment:
+          //                                     MainAxisAlignment.center,
+          //                                 children: [
+          //                                   InkWell(
+          //                                     splashColor: Colors.white,
+          //                                     onTap: () {},
+          //                                     child: Stack(
+          //                                         alignment:
+          //                                             AlignmentDirectional
+          //                                                 .bottomCenter,
+          //                                         children: [
+          //                                           ClipRRect(
+          //                                             borderRadius:
+          //                                                 const BorderRadius
+          //                                                         .all(
+          //                                                     Radius.circular(
+          //                                                         5.0)),
+          //                                             child: Image.asset(
+          //                                                 'assets/images/pexels-stefan-lorentz-668137.jpg',
+          //                                                 fit: BoxFit.cover,
+          //                                                 width: 180.0,
+          //                                                 height: 105.0),
+          //                                           ),
+          //                                           Container(
+          //                                             height: 105.0,
+          //                                             decoration: BoxDecoration(
+          //                                                 borderRadius:
+          //                                                     const BorderRadius
+          //                                                             .all(
+          //                                                         Radius
+          //                                                             .circular(
+          //                                                                 5.0)),
+          //                                                 color: Colors.black,
+          //                                                 gradient:
+          //                                                     LinearGradient(
+          //                                                   begin:
+          //                                                       FractionalOffset
+          //                                                           .center,
+          //                                                   end:
+          //                                                       FractionalOffset
+          //                                                           .topCenter,
+          //                                                   colors: [
+          //                                                     Colors.grey
+          //                                                         .withOpacity(
+          //                                                             0.0),
+          //                                                     Colors.black,
+          //                                                   ],
+          //                                                 )),
+          //                                           ),
+          //                                           const Padding(
+          //                                             padding: EdgeInsets.only(
+          //                                                 bottom: 85.0),
+          //                                             child: Text(
+          //                                               'Reading Day',
+          //                                               style: TextStyle(
+          //                                                   overflow:
+          //                                                       TextOverflow
+          //                                                           .ellipsis,
+          //                                                   color:
+          //                                                       Colors.white),
+          //                                             ),
+          //                                           ),
+          //                                         ]),
+          //                                   ),
+          //                                 ]),
+          //                           )),
+          //                     ],
+          //                   ),
+          //                   const SizedBox(
+          //                     height: 5,
+          //                   ),
+          //                   SizedBox(
+          //                       //----------------------------------HorizBox--------------------------//
+          //                       height: 110,
+          //                       width: 285,
+          //                       child: Container(
+          //                         decoration: BoxDecoration(
+          //                           borderRadius: const BorderRadius.all(
+          //                               Radius.circular(5.0)),
+          //                           color: Colors.purple.shade50,
+          //                         ),
+          //                         child: Column(
+          //                             mainAxisAlignment:
+          //                                 MainAxisAlignment.center,
+          //                             children: [
+          //                               InkWell(
+          //                                 splashColor: Colors.white,
+          //                                 onTap: () {},
+          //                                 child: Stack(
+          //                                     alignment: AlignmentDirectional
+          //                                         .bottomCenter,
+          //                                     children: [
+          //                                       ClipRRect(
+          //                                         borderRadius:
+          //                                             const BorderRadius.all(
+          //                                                 Radius.circular(5.0)),
+          //                                         child: Image.asset(
+          //                                             'assets/images/pexels-teddy-yang-2263436.jpg',
+          //                                             fit: BoxFit.cover,
+          //                                             width: 285.0,
+          //                                             height: 110.0),
+          //                                       ),
+          //                                       Container(
+          //                                         height: 110.0,
+          //                                         decoration: BoxDecoration(
+          //                                             borderRadius:
+          //                                                 const BorderRadius
+          //                                                         .all(
+          //                                                     Radius.circular(
+          //                                                         5.0)),
+          //                                             color: Colors.black,
+          //                                             gradient: LinearGradient(
+          //                                               begin: FractionalOffset
+          //                                                   .center,
+          //                                               end: FractionalOffset
+          //                                                   .bottomCenter,
+          //                                               colors: [
+          //                                                 Colors.grey
+          //                                                     .withOpacity(0.0),
+          //                                                 Colors.black,
+          //                                               ],
+          //                                             )),
+          //                                       ),
+          //                                       const Padding(
+          //                                         padding: EdgeInsets.only(
+          //                                             right: 160, bottom: 5.0),
+          //                                         child: Text(
+          //                                           'Music celebration',
+          //                                           textAlign: TextAlign.start,
+          //                                           style: TextStyle(
+          //                                               color: Colors.white),
+          //                                         ),
+          //                                       ),
+          //                                     ]),
+          //                               ),
+          //                             ]),
+          //                       )),
+          //                 ],
+          //               ),
+          //               const SizedBox(
+          //                 //---------------------- padding right --------------------//
+          //                 width: 5,
+          //               ),
+          //               Column(
+          //                 //----------------------------------Vertical boxes--------------------------//
+          //                 children: [
+          //                   SizedBox(
+          //                       height: 220,
+          //                       width: 140,
+          //                       child: Container(
+          //                         decoration: BoxDecoration(
+          //                           borderRadius: const BorderRadius.all(
+          //                               Radius.circular(5.0)),
+          //                           color: Colors.purple.shade50,
+          //                         ),
+          //                         child: Column(
+          //                             mainAxisAlignment:
+          //                                 MainAxisAlignment.center,
+          //                             children: [
+          //                               InkWell(
+          //                                 splashColor: Colors.white,
+          //                                 onTap: () {},
+          //                                 child: Stack(
+          //                                     alignment: AlignmentDirectional
+          //                                         .bottomCenter,
+          //                                     children: [
+          //                                       ClipRRect(
+          //                                         borderRadius:
+          //                                             const BorderRadius.all(
+          //                                                 Radius.circular(5.0)),
+          //                                         child: Image.asset(
+          //                                             'assets/images/pexels-ben-kirby-10901842.jpg',
+          //                                             fit: BoxFit.cover,
+          //                                             width: 180.0,
+          //                                             height: 220.0),
+          //                                       ),
+          //                                       Container(
+          //                                         height: 220.0,
+          //                                         decoration: BoxDecoration(
+          //                                             borderRadius:
+          //                                                 const BorderRadius
+          //                                                         .all(
+          //                                                     Radius.circular(
+          //                                                         5.0)),
+          //                                             color: Colors.black,
+          //                                             gradient: LinearGradient(
+          //                                               begin: FractionalOffset
+          //                                                   .center,
+          //                                               end: FractionalOffset
+          //                                                   .bottomCenter,
+          //                                               colors: [
+          //                                                 Colors.grey
+          //                                                     .withOpacity(0.0),
+          //                                                 Colors.black,
+          //                                               ],
+          //                                             )),
+          //                                       ),
+          //                                       const Padding(
+          //                                         padding: EdgeInsets.only(
+          //                                             bottom: 5.0),
+          //                                         child: Text(
+          //                                           'Chinatown Events',
+          //                                           style: TextStyle(
+          //                                               color: Colors.white),
+          //                                         ),
+          //                                       ),
+          //                                     ]),
+          //                               ),
+          //                             ]),
+          //                       )),
+          //                 ],
+          //               ),
+          //               const SizedBox(
+          //                 //---------------------- padding right --------------------//
+          //                 width: 5,
+          //               ),
+          //               Column(
+          //                 //----------------------------------Horiz boxes--------------------------//
+          //                 children: [
+          //                   SizedBox(
+          //                       height: 110,
+          //                       width: 140,
+          //                       child: Container(
+          //                         decoration: BoxDecoration(
+          //                           borderRadius: const BorderRadius.all(
+          //                               Radius.circular(5.0)),
+          //                           color: Colors.purple.shade50,
+          //                         ),
+          //                         child: Column(
+          //                             mainAxisAlignment:
+          //                                 MainAxisAlignment.center,
+          //                             children: [
+          //                               InkWell(
+          //                                 splashColor: Colors.white,
+          //                                 onTap: () {},
+          //                                 child: Stack(
+          //                                     alignment: AlignmentDirectional
+          //                                         .bottomCenter,
+          //                                     children: [
+          //                                       ClipRRect(
+          //                                         borderRadius:
+          //                                             const BorderRadius.all(
+          //                                                 Radius.circular(5.0)),
+          //                                         child: Image.asset(
+          //                                             'assets/images/pexels-johnmark-smith-301987.jpg',
+          //                                             fit: BoxFit.cover,
+          //                                             width: 180.0,
+          //                                             height: 110.0),
+          //                                       ),
+          //                                       Container(
+          //                                         height: 110.0,
+          //                                         decoration: BoxDecoration(
+          //                                             borderRadius:
+          //                                                 const BorderRadius
+          //                                                         .all(
+          //                                                     Radius.circular(
+          //                                                         5.0)),
+          //                                             color: Colors.black,
+          //                                             gradient: LinearGradient(
+          //                                               begin: FractionalOffset
+          //                                                   .center,
+          //                                               end: FractionalOffset
+          //                                                   .topCenter,
+          //                                               colors: [
+          //                                                 Colors.grey
+          //                                                     .withOpacity(0.0),
+          //                                                 Colors.black,
+          //                                               ],
+          //                                             )),
+          //                                       ),
+          //                                       const Padding(
+          //                                         padding: EdgeInsets.only(
+          //                                             bottom: 85.0),
+          //                                         child: Text(
+          //                                           'Science Lecture',
+          //                                           style: TextStyle(
+          //                                               color: Colors.white),
+          //                                         ),
+          //                                       ),
+          //                                     ]),
+          //                               ),
+          //                             ]),
+          //                       )),
+          //                   const SizedBox(
+          //                     height: 5,
+          //                   ),
+          //                   SizedBox(
+          //                       height: 105,
+          //                       width: 140,
+          //                       child: Container(
+          //                         decoration: BoxDecoration(
+          //                           borderRadius: const BorderRadius.all(
+          //                               Radius.circular(5.0)),
+          //                           color: Colors.purple.shade50,
+          //                         ),
+          //                         child: Column(
+          //                             mainAxisAlignment:
+          //                                 MainAxisAlignment.center,
+          //                             children: [
+          //                               InkWell(
+          //                                 splashColor: Colors.white,
+          //                                 onTap: () {},
+          //                                 child: Stack(
+          //                                     alignment: AlignmentDirectional
+          //                                         .bottomCenter,
+          //                                     children: [
+          //                                       ClipRRect(
+          //                                         borderRadius:
+          //                                             const BorderRadius.all(
+          //                                                 Radius.circular(5.0)),
+          //                                         child: Image.asset(
+          //                                             'assets/images/pexels-jonathan-petersson-399610.jpg',
+          //                                             fit: BoxFit.cover,
+          //                                             width: 180.0,
+          //                                             height: 105.0),
+          //                                       ),
+          //                                       Container(
+          //                                         height: 105.0,
+          //                                         decoration: BoxDecoration(
+          //                                             borderRadius:
+          //                                                 const BorderRadius
+          //                                                         .all(
+          //                                                     Radius.circular(
+          //                                                         5.0)),
+          //                                             color: Colors.black,
+          //                                             gradient: LinearGradient(
+          //                                               begin: FractionalOffset
+          //                                                   .center,
+          //                                               end: FractionalOffset
+          //                                                   .topCenter,
+          //                                               colors: [
+          //                                                 Colors.grey
+          //                                                     .withOpacity(0.0),
+          //                                                 Colors.black,
+          //                                               ],
+          //                                             )),
+          //                                       ),
+          //                                       const Padding(
+          //                                         padding: EdgeInsets.only(
+          //                                             bottom: 85.0),
+          //                                         child: Text(
+          //                                           'National Day',
+          //                                           style: TextStyle(
+          //                                               color: Colors.white),
+          //                                         ),
+          //                                       ),
+          //                                     ]),
+          //                               ),
+          //                             ]),
+          //                       )),
+          //                 ],
+          //               ),
+          //               const SizedBox(
+          //                 width: 10,
+          //               )
+          //             ]), // ------------------------End of ListView Elements --------------------------//
+          //       ),
+          //     ],
+          //   ),
+          // ),
 
           // ----------------------------Events--------------------------------------------//
           Expanded(

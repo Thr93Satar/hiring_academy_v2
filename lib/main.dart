@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hiring_academy_v2/Recover_account.dart';
+import 'package:hiring_academy_v2/create_account.dart';
 import 'package:hiring_academy_v2/event.dart';
 import 'package:hiring_academy_v2/home_signed_in.dart';
 import 'package:hiring_academy_v2/more_events.dart';
 import 'package:hiring_academy_v2/news.dart';
+import 'package:hiring_academy_v2/otp_confirmation.dart';
 import 'package:hiring_academy_v2/otp_page.dart';
 import 'package:hiring_academy_v2/password_reset.dart';
 import 'package:hiring_academy_v2/password_reset_2.dart';
+import 'package:hiring_academy_v2/registeration.dart';
 // -------------------------------------------App-Main-Pages----------------------------------//
 import 'forgot_password.dart';
 import 'home.dart';
@@ -46,6 +49,10 @@ class MyApp extends StatelessWidget {
         '/password_reset_2': (context) => const P_reset_2(),
         '/recover_account': (context) => const RecoverAccount(),
         '/otp_page': (context) => const OTP(),
+        '/otp_confirmation_page': (context) => const OTPCon(),
+        '/registeration': (context) => const Register(),
+        '/create_account': (context) => const Account(),
+
 
       },
       locale: const Locale('en'),
@@ -104,5 +111,6 @@ Map<int, Color> color2 = {
 
 MaterialColor elementcolor = MaterialColor(0xFFD3CEE6, color2);
 // -------------------------------------Color Swatch----------------------------
+
 
 
