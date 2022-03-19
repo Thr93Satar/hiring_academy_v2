@@ -247,7 +247,7 @@ class _LoginState extends State<Login> {
                                               ),
                                               onPressed: () {
                                                 print('go to create account page');
-                                                Navigator.pushReplacementNamed(context, '/registeration');
+                                                Navigator.pushReplacementNamed(context, '/registration');
                                               },
                                               child: const Text(
                                                 'Register',

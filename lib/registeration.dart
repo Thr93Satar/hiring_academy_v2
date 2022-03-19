@@ -35,7 +35,7 @@ class _RegisterState extends State<Register> {
               child: Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Text(
-                  'New opportunities lie ahead',
+                  'New opportunities lies ahead',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
@@ -87,8 +87,8 @@ class _RegisterState extends State<Register> {
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            const Padding(
+                          children: const [
+                            Padding(
                               padding: EdgeInsets.only(top: 40.0,left: 180),
                               child: Text('Join',
                                 style: TextStyle(
@@ -102,10 +102,10 @@ class _RegisterState extends State<Register> {
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            const Padding(
+                          children: const [
+                            Padding(
                               padding: EdgeInsets.only(top: 40.0,left: 50),
-                              child: const Text('Seek',
+                              child: Text('Seek',
                                 style: TextStyle(
                                   color: Colors.deepPurple,
                                   fontWeight: FontWeight.bold,
@@ -117,11 +117,11 @@ class _RegisterState extends State<Register> {
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            const Padding(
+                          children: const [
+                            Padding(
                               padding: EdgeInsets.only(top: 20.0,left: 280),
                               child: Text('Work',
-                                style: const TextStyle(
+                                style: TextStyle(
                                   color: Colors.deepPurple,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 25,
@@ -132,8 +132,8 @@ class _RegisterState extends State<Register> {
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            const Padding(
+                          children: const [
+                            Padding(
                               padding: EdgeInsets.only(top: 215.0,left: 170),
                               child: Text('Because you\ndeserve',
                                 textAlign: TextAlign.justify,

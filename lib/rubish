@@ -1,0 +1,11 @@
+ListView.separated(
+                              itemBuilder: (BuildContext context, int index) {
+                                return Divider(
+                                  height: 10,
+                                );
+                              },
+                              separatorBuilder:
+                                  (BuildContext context, int index) {
+                                return Widget();
+                              },
+                              itemCount: 15),

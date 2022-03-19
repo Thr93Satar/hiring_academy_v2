@@ -4,9 +4,11 @@ import 'package:hiring_academy_v2/Recover_account.dart';
 import 'package:hiring_academy_v2/create_account.dart';
 import 'package:hiring_academy_v2/event.dart';
 import 'package:hiring_academy_v2/home_signed_in.dart';
+import 'package:hiring_academy_v2/job_search_result.dart';
 import 'package:hiring_academy_v2/more_events.dart';
 import 'package:hiring_academy_v2/news.dart';
 import 'package:hiring_academy_v2/otp_confirmation.dart';
+import 'package:hiring_academy_v2/otp_confirmation_reg.dart';
 import 'package:hiring_academy_v2/otp_page.dart';
 import 'package:hiring_academy_v2/password_reset.dart';
 import 'package:hiring_academy_v2/password_reset_2.dart';
@@ -50,8 +52,10 @@ class MyApp extends StatelessWidget {
         '/recover_account': (context) => const RecoverAccount(),
         '/otp_page': (context) => const OTP(),
         '/otp_confirmation_page': (context) => const OTPCon(),
-        '/registeration': (context) => const Register(),
+        '/registration': (context) => const Register(),
         '/create_account': (context) => const Account(),
+        '/otp_confirmation_reg': (context) => const OTPConr(),
+        '/job_search_result': (context) => const SearchResult(),
 
 
       },

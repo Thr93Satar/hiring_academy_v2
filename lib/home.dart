@@ -1,8 +1,45 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hiring_academy_v2/job_search_result.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'main.dart';
 import 'news.dart';
+import 'package:filter_list/filter_list.dart';
+
+class Option {
+  final String name;
+  final IconData icon;
+  final Color color;
+
+  const Option({
+    required this.name,
+    required this.icon,
+    required this.color,
+  });
+}
+
+class User {
+  final String? name;
+  final String? avatar;
+  User({this.name, this.avatar});
+}
+
+List<User> userList = [
+  User(name: "Jon", avatar: ""),
+  User(name: "Lindsey ", avatar: ""),
+  User(name: "Valarie ", avatar: ""),
+  User(name: "Elyse ", avatar: ""),
+  User(name: "Ethel ", avatar: ""),
+  User(name: "Emelyan ", avatar: ""),
+  User(name: "Catherine ", avatar: ""),
+  User(name: "Stepanida  ", avatar: ""),
+  User(name: "Carolina ", avatar: ""),
+  User(name: "Nail  ", avatar: ""),
+  User(name: "Kamil ", avatar: ""),
+  User(name: "Mariana ", avatar: ""),
+  User(name: "Katerina ", avatar: ""),
+];
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -12,10 +49,56 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  var controller = TextEditingController();
+
+  static const List<Option> options = [
+    Option(name: "Home", icon: Icons.cottage_rounded, color: Colors.deepPurpleAccent),
+    Option(name: "Jobs", icon: Icons.work, color: Colors.deepPurpleAccent),
+    Option(name: "Company", icon: Icons.apartment_rounded, color: Colors.deepPurpleAccent),
+    Option(name: "Progress", icon: Icons.donut_small_rounded, color: Colors.deepPurpleAccent),
+    Option(name: "Settings", icon: Icons.more_horiz, color: Colors.deepPurpleAccent),
+  ];
   int selectedPage = 0;
+
+  Option get option => options[selectedPage];
+
 
   @override
   Widget build(BuildContext context) {
+
+    void openFilterDialog() async {
+      await FilterListDialog.display<User>(
+        context,
+        listData: userList,
+        selectedListData: userList,
+        choiceChipLabel: (user) => user!.name,
+        validateSelectedItem: (list, val) => list!.contains(val),
+        onItemSearch: (user, query) {
+          return user.name!.toLowerCase().contains(query.toLowerCase());
+        },
+        onApplyButtonClick: (list) {
+          setState(() {
+            userList = List.from(list!);
+          });
+          Navigator.pop(context);
+        },
+        choiceChipBuilder: (context, item, isSelected) {
+        return Container(
+          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          decoration: BoxDecoration(
+              border: Border.all(
+            color: isSelected! ? Colors.deepPurple : Colors.grey[300]!,
+          )),
+          child: Text(
+            item.name,
+            style: TextStyle(
+                color: isSelected ? Colors.deepPurple : Colors.grey[300]),
+          ),
+        );
+      },
+      );
+    }
     List<Widget> pageSelection = [
       Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -232,8 +315,8 @@ class _HomeState extends State<Home> {
                         //--------------------------------------------------------------------- Second picture in the slider --------------------------------//
                         SizedBox(
                             child: Container(
-                              margin: const EdgeInsets.only(bottom: 20, left: 455),
-                              decoration: BoxDecoration(
+                          margin: const EdgeInsets.only(bottom: 20, left: 455),
+                          decoration: BoxDecoration(
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(20)),
                             color: Colors.purple.shade50,
@@ -248,9 +331,8 @@ class _HomeState extends State<Home> {
                                       Navigator.pushReplacement(
                                           context,
                                           MaterialPageRoute(
-                                              builder:
-                                                  (BuildContext context) =>
-                                                      const News()));
+                                              builder: (BuildContext context) =>
+                                                  const News()));
                                     },
                                     child: Stack(
                                         alignment:
@@ -261,8 +343,7 @@ class _HomeState extends State<Home> {
                                               aspectRatio: 3 / 3,
                                               child: ClipRRect(
                                                 borderRadius:
-                                                    BorderRadius.circular(
-                                                        20.0),
+                                                    BorderRadius.circular(20.0),
                                                 child: Image.asset(
                                                   'assets/images/farhad-ibrahimzade-54dvxsQeQIM-unsplash.jpg',
                                                   fit: BoxFit.cover,
@@ -280,8 +361,8 @@ class _HomeState extends State<Home> {
                                                               19.0)),
                                                   color: Colors.black,
                                                   gradient: LinearGradient(
-                                                    begin: FractionalOffset
-                                                        .center,
+                                                    begin:
+                                                        FractionalOffset.center,
                                                     end: FractionalOffset
                                                         .bottomCenter,
                                                     colors: [
@@ -325,9 +406,8 @@ class _HomeState extends State<Home> {
                                       Navigator.pushReplacement(
                                           context,
                                           MaterialPageRoute(
-                                              builder:
-                                                  (BuildContext context) =>
-                                                      const News()));
+                                              builder: (BuildContext context) =>
+                                                  const News()));
                                     },
                                     child: Stack(
                                         alignment:
@@ -338,8 +418,7 @@ class _HomeState extends State<Home> {
                                               aspectRatio: 3 / 3,
                                               child: ClipRRect(
                                                 borderRadius:
-                                                    BorderRadius.circular(
-                                                        20.0),
+                                                    BorderRadius.circular(20.0),
                                                 child: Image.asset(
                                                   'assets/images/farhad-ibrahimzade-54dvxsQeQIM-unsplash.jpg',
                                                   fit: BoxFit.cover,
@@ -357,8 +436,8 @@ class _HomeState extends State<Home> {
                                                               19.0)),
                                                   color: Colors.black,
                                                   gradient: LinearGradient(
-                                                    begin: FractionalOffset
-                                                        .center,
+                                                    begin:
+                                                        FractionalOffset.center,
                                                     end: FractionalOffset
                                                         .bottomCenter,
                                                     colors: [
@@ -402,9 +481,8 @@ class _HomeState extends State<Home> {
                                       Navigator.pushReplacement(
                                           context,
                                           MaterialPageRoute(
-                                              builder:
-                                                  (BuildContext context) =>
-                                                      const News()));
+                                              builder: (BuildContext context) =>
+                                                  const News()));
                                     },
                                     child: Stack(
                                         alignment:
@@ -415,8 +493,7 @@ class _HomeState extends State<Home> {
                                               aspectRatio: 3 / 3,
                                               child: ClipRRect(
                                                 borderRadius:
-                                                    BorderRadius.circular(
-                                                        20.0),
+                                                    BorderRadius.circular(20.0),
                                                 child: Image.asset(
                                                   'assets/images/farhad-ibrahimzade-54dvxsQeQIM-unsplash.jpg',
                                                   fit: BoxFit.cover,
@@ -434,8 +511,8 @@ class _HomeState extends State<Home> {
                                                               19.0)),
                                                   color: Colors.black,
                                                   gradient: LinearGradient(
-                                                    begin: FractionalOffset
-                                                        .center,
+                                                    begin:
+                                                        FractionalOffset.center,
                                                     end: FractionalOffset
                                                         .bottomCenter,
                                                     colors: [
@@ -479,9 +556,8 @@ class _HomeState extends State<Home> {
                                       Navigator.pushReplacement(
                                           context,
                                           MaterialPageRoute(
-                                              builder:
-                                                  (BuildContext context) =>
-                                                      const News()));
+                                              builder: (BuildContext context) =>
+                                                  const News()));
                                     },
                                     child: Stack(
                                         alignment:
@@ -492,8 +568,7 @@ class _HomeState extends State<Home> {
                                               aspectRatio: 3 / 3,
                                               child: ClipRRect(
                                                 borderRadius:
-                                                    BorderRadius.circular(
-                                                        20.0),
+                                                    BorderRadius.circular(20.0),
                                                 child: Image.asset(
                                                   'assets/images/farhad-ibrahimzade-54dvxsQeQIM-unsplash.jpg',
                                                   fit: BoxFit.cover,
@@ -511,8 +586,8 @@ class _HomeState extends State<Home> {
                                                               19.0)),
                                                   color: Colors.black,
                                                   gradient: LinearGradient(
-                                                    begin: FractionalOffset
-                                                        .center,
+                                                    begin:
+                                                        FractionalOffset.center,
                                                     end: FractionalOffset
                                                         .bottomCenter,
                                                     colors: [
@@ -1571,44 +1646,188 @@ class _HomeState extends State<Home> {
         ],
       ),
       // //----------------------------------------------Home----------------------------------//
-      // Column(
-      //   mainAxisAlignment: MainAxisAlignment.start,
-      //   children: const [
-      //     SizedBox(
-      //       height: 10,
-      //     ),
-      //   ],
-      // ),
-      // //----------------------------------------------Jobs----------------------------------//
-      // Column(
-      //   mainAxisAlignment: MainAxisAlignment.start,
-      //   children: const [
-      //     SizedBox(
-      //       height: 10,
-      //     ),
-      //   ],
-      // ),
-      // //----------------------------------------------Company----------------------------------//
-      // Column(
-      //   mainAxisAlignment: MainAxisAlignment.start,
-      //   children: const [
-      //     SizedBox(
-      //       height: 10,
-      //     ),
-      //   ],
-      // ),
-      // //----------------------------------------------Progression----------------------------------//
-      // Column(
-      //   mainAxisAlignment: MainAxisAlignment.start,
-      //   children: const [
-      //     SizedBox(
-      //       height: 10,
-      //     ),
-      //   ],
-      // ),
-      // //----------------------------------------------More----------------------------------//
+      Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Stack(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: elementcolor,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(25),
+                      ),
+                    ),
+                    child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: const [
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Look for a job',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Icon(
+                              Icons.work,
+                              size: 25,
+                              color: Colors.deepPurple,
+                            ),
+                          ],
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 5.0),
+                          child: Divider(
+                            height: 1,
+                            color: Colors.grey,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 10.0, left: 10.0, right: 10.0),
+                          child: Container(
+                            width: double.infinity,
+                            height: 40,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5)),
+                            child: Center(
+                              child: TextField(
+                                textAlignVertical: TextAlignVertical.center,
+                                controller: controller,
+                                decoration: InputDecoration(
+                                  prefixIcon: IconButton(
+                                      onPressed: (){
+                                        Navigator.pushNamed(context, '/job_search_result');
+                                      },
+                                      icon: Icon(Icons.search)),
+                                  suffixIcon: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      IconButton(
+                                        icon: const Icon(Icons.clear),
+                                        onPressed: () {
+                                          controller.clear();
+                                        },
+                                      ),
+                                      IconButton(
+                                        icon: const Icon(Icons.filter_alt),
+                                        onPressed: openFilterDialog,
+                                      ),
+                                    ],
+                                  ),
+                                  hintText: 'Search...',
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 10.0),
+                          child: Text(
+                              'List of jobs that match your account criteria'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      top: 140.0, left: 20.0, right: 20.0, bottom: 20.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurple.shade50,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(25),
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Text('Job Title'),
+                            SizedBox(
+                              width: 70,
+                            ),
+                            Text('Company'),
+                            SizedBox(
+                              width: 70,
+                            ),
+                            Text('Date'),
+                          ],
+                        ),
+                        const Divider(
+                          color: Colors.black,
+                        ),
+                        SvgPicture.asset('assets/images/jobs.svg',
+                            height: 200, width: 200),
+                        const Text(
+                          'Search for your opportunity',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+      //----------------------------------------------Jobs----------------------------------//
+      Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: const [
+          SizedBox(
+            height: 10,
+          ),
+        ],
+      ),
+      //----------------------------------------------Company----------------------------------//
+      Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: const [
+          SizedBox(
+            height: 10,
+          ),
+        ],
+      ),
+      //----------------------------------------------Progression----------------------------------//
+      Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: const [
+          SizedBox(
+            height: 10,
+          ),
+        ],
+      ),
+      //----------------------------------------------More----------------------------------//
     ];
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: pageSelection[selectedPage],
       appBar: AppBar(
         centerTitle: true,
@@ -1652,60 +1871,17 @@ class _HomeState extends State<Home> {
           type: BottomNavigationBarType.fixed,
           showSelectedLabels: false,
           showUnselectedLabels: false,
+          unselectedItemColor: Colors.black87,
           elevation: 20,
-          iconSize: 10,
+          iconSize: 25,
           items: [
-            BottomNavigationBarItem(
-              label: 'Home',
-              icon: CircleAvatar(
-                  maxRadius: 16,
-                  minRadius: 15,
-                  backgroundColor: Colors.deepPurple.shade500,
-                  child: const Icon(
-                    Icons.cottage_rounded,
-                    color: Colors.white,
-                  )),
-            ),
-            BottomNavigationBarItem(
-                label: 'Work',
-                icon: CircleAvatar(
-                    maxRadius: 16,
-                    minRadius: 15,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.work,
-                      color: Colors.deepPurple.shade500,
-                    ))),
-            BottomNavigationBarItem(
-                label: 'Company',
-                icon: CircleAvatar(
-                    maxRadius: 16,
-                    minRadius: 15,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.apartment_rounded,
-                      color: Colors.deepPurple.shade500,
-                    ))),
-            BottomNavigationBarItem(
-                label: 'Progression',
-                icon: CircleAvatar(
-                    maxRadius: 16,
-                    minRadius: 15,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.donut_small_rounded,
-                      color: Colors.deepPurple.shade500,
-                    ))),
-            BottomNavigationBarItem(
-                label: 'More',
-                icon: CircleAvatar(
-                    maxRadius: 16,
-                    minRadius: 15,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.more_horiz,
-                      color: Colors.deepPurple.shade500,
-                    ))),
+            for (final option in options)
+              BottomNavigationBarItem(
+                icon: Icon(
+                  option.icon,
+                ),
+                label: option.name,
+              ),
           ],
           onTap: (index) {
             setState(() {
@@ -1717,3 +1893,6 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
+
+
