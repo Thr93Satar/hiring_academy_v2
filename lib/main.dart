@@ -8,7 +8,6 @@ import 'package:hiring_academy_v2/edit_job_application.dart';
 import 'package:hiring_academy_v2/edit_job_list.dart';
 import 'package:hiring_academy_v2/event.dart';
 import 'package:hiring_academy_v2/home_signed_in.dart';
-import 'package:hiring_academy_v2/inside_report.dart';
 import 'package:hiring_academy_v2/inside_settings.dart';
 import 'package:hiring_academy_v2/job_created_successfully.dart';
 import 'package:hiring_academy_v2/job_search_result.dart';
@@ -20,6 +19,7 @@ import 'package:hiring_academy_v2/otp_page.dart';
 import 'package:hiring_academy_v2/password_reset.dart';
 import 'package:hiring_academy_v2/password_reset_2.dart';
 import 'package:hiring_academy_v2/registeration.dart';
+import 'package:hiring_academy_v2/report_section.dart';
 import 'package:hiring_academy_v2/submitted_application.dart';
 import 'package:hiring_academy_v2/view_application.dart';
 import 'package:hiring_academy_v2/view_job_list.dart';
@@ -77,7 +77,7 @@ class MyApp extends StatelessWidget {
         '/view_resume': (context) => const ViewResume(),
         '/close_job_applications': (context) => const CloseJobApplications(),
         '/more_settings': (context) => const InsideSettings(),
-        '/more_report': (context) => const InsideReport(),
+        '/more_report': (context) => const Report(),
       },
       locale: const Locale('en'),
       localizationsDelegates: const [
