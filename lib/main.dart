@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hiring_academy_v2/Recover_account.dart';
+import 'package:hiring_academy_v2/close_job_applications.dart';
 import 'package:hiring_academy_v2/create_account.dart';
+import 'package:hiring_academy_v2/create_job_application.dart';
+import 'package:hiring_academy_v2/edit_job_application.dart';
+import 'package:hiring_academy_v2/edit_job_list.dart';
 import 'package:hiring_academy_v2/event.dart';
 import 'package:hiring_academy_v2/home_signed_in.dart';
+import 'package:hiring_academy_v2/inside_report.dart';
+import 'package:hiring_academy_v2/inside_settings.dart';
+import 'package:hiring_academy_v2/job_created_successfully.dart';
 import 'package:hiring_academy_v2/job_search_result.dart';
 import 'package:hiring_academy_v2/more_events.dart';
 import 'package:hiring_academy_v2/news.dart';
@@ -13,6 +20,10 @@ import 'package:hiring_academy_v2/otp_page.dart';
 import 'package:hiring_academy_v2/password_reset.dart';
 import 'package:hiring_academy_v2/password_reset_2.dart';
 import 'package:hiring_academy_v2/registeration.dart';
+import 'package:hiring_academy_v2/submitted_application.dart';
+import 'package:hiring_academy_v2/view_application.dart';
+import 'package:hiring_academy_v2/view_job_list.dart';
+import 'package:hiring_academy_v2/view_resume.dart';
 // -------------------------------------------App-Main-Pages----------------------------------//
 import 'forgot_password.dart';
 import 'home.dart';
@@ -56,8 +67,17 @@ class MyApp extends StatelessWidget {
         '/create_account': (context) => const Account(),
         '/otp_confirmation_reg': (context) => const OTPConr(),
         '/job_search_result': (context) => const SearchResult(),
-
-
+        '/view_application': (context) => const ViewApplication(),
+        '/submitted_application': (context) => const SubmittedApp(),
+        '/create_job_application': (context) => const CreateApplication(),
+        '/job_created_successfully': (context) => const JobCreatedSuccessfully(),
+        '/edit_job_list': (context) => const EditJobList(),
+        '/edit_job_application': (context) => const EditJobApplication(),
+        '/view_job_list': (context) => const ViewJobList(),
+        '/view_resume': (context) => const ViewResume(),
+        '/close_job_applications': (context) => const CloseJobApplications(),
+        '/more_settings': (context) => const InsideSettings(),
+        '/more_report': (context) => const InsideReport(),
       },
       locale: const Locale('en'),
       localizationsDelegates: const [

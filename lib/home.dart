@@ -22,6 +22,7 @@ class Option {
 class User {
   final String? name;
   final String? avatar;
+
   User({this.name, this.avatar});
 }
 
@@ -52,20 +53,30 @@ class _HomeState extends State<Home> {
   var controller = TextEditingController();
 
   static const List<Option> options = [
-    Option(name: "Home", icon: Icons.cottage_rounded, color: Colors.deepPurpleAccent),
+    Option(
+        name: "Home",
+        icon: Icons.cottage_rounded,
+        color: Colors.deepPurpleAccent),
     Option(name: "Jobs", icon: Icons.work, color: Colors.deepPurpleAccent),
-    Option(name: "Company", icon: Icons.apartment_rounded, color: Colors.deepPurpleAccent),
-    Option(name: "Progress", icon: Icons.donut_small_rounded, color: Colors.deepPurpleAccent),
-    Option(name: "Settings", icon: Icons.more_horiz, color: Colors.deepPurpleAccent),
+    Option(
+        name: "Company",
+        icon: Icons.apartment_rounded,
+        color: Colors.deepPurpleAccent),
+    Option(
+        name: "Progress",
+        icon: Icons.donut_small_rounded,
+        color: Colors.deepPurpleAccent),
+    Option(
+        name: "Settings",
+        icon: Icons.more_horiz,
+        color: Colors.deepPurpleAccent),
   ];
   int selectedPage = 0;
 
   Option get option => options[selectedPage];
 
-
   @override
   Widget build(BuildContext context) {
-
     void openFilterDialog() async {
       await FilterListDialog.display<User>(
         context,
@@ -83,22 +94,23 @@ class _HomeState extends State<Home> {
           Navigator.pop(context);
         },
         choiceChipBuilder: (context, item, isSelected) {
-        return Container(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          decoration: BoxDecoration(
-              border: Border.all(
-            color: isSelected! ? Colors.deepPurple : Colors.grey[300]!,
-          )),
-          child: Text(
-            item.name,
-            style: TextStyle(
-                color: isSelected ? Colors.deepPurple : Colors.grey[300]),
-          ),
-        );
-      },
+          return Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            decoration: BoxDecoration(
+                border: Border.all(
+              color: isSelected! ? Colors.deepPurple : Colors.grey[300]!,
+            )),
+            child: Text(
+              item.name,
+              style: TextStyle(
+                  color: isSelected ? Colors.deepPurple : Colors.grey[300]),
+            ),
+          );
+        },
       );
     }
+
     List<Widget> pageSelection = [
       Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -1711,10 +1723,11 @@ class _HomeState extends State<Home> {
                                 controller: controller,
                                 decoration: InputDecoration(
                                   prefixIcon: IconButton(
-                                      onPressed: (){
-                                        Navigator.pushNamed(context, '/job_search_result');
+                                      onPressed: () {
+                                        Navigator.pushNamed(
+                                            context, '/job_search_result');
                                       },
-                                      icon: Icon(Icons.search)),
+                                      icon: const Icon(Icons.search)),
                                   suffixIcon: Row(
                                     mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment: MainAxisAlignment.end,
@@ -1800,9 +1813,296 @@ class _HomeState extends State<Home> {
       //----------------------------------------------Jobs----------------------------------//
       Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        children: const [
-          SizedBox(
-            height: 10,
+        children: [
+          Expanded(
+            child: Stack(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: elementcolor,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(25),
+                      ),
+                    ),
+                    child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: const [
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Company',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Icon(
+                              Icons.apartment_rounded,
+                              size: 25,
+                              color: Colors.deepPurple,
+                            ),
+                          ],
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 5.0),
+                          child: Divider(
+                            height: 1,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      top: 60.0, left: 40.0, right: 40.0, bottom: 250.0),
+                  child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.deepPurple.shade50,
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(25),
+                        ),
+                      ),
+                      child: Column(children: [
+                        const Padding(
+                          padding: EdgeInsets.only(top: 5.0),
+                          child: Text('Post a job'),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 10.0, left: 10.0),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, '/create_job_application');
+                                },
+                                child: Stack(children: [
+                                  Container(
+                                      height: 100,
+                                      width: 100,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: const BorderRadius.all(
+                                            Radius.circular(10),
+                                          ),
+                                          border: Border.all(
+                                            color: Colors.black,
+                                          )),
+                                      child: const Padding(
+                                        padding: EdgeInsets.only(top: 25.0),
+                                        child: Icon(
+                                          Icons.add_circle,
+                                          color: Colors.deepPurple,
+                                          size: 50,
+                                        ),
+                                      )),
+                                  Container(
+                                      height: 30,
+                                      width: 100,
+                                      decoration: const BoxDecoration(
+                                        color: Colors.deepPurple,
+                                        borderRadius: const BorderRadius.all(
+                                            Radius.circular(10)),
+                                      ),
+                                      child: const Padding(
+                                        padding: EdgeInsets.only(
+                                            top: 5.0, left: 20.0),
+                                        child: const Text('New Job',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 18)),
+                                      )),
+                                ]),
+                              ),
+                            ),
+                            const SizedBox(width: 40),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 10.0, right: 10.0),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, '/view_job_list');
+                                },
+                                child: Stack(children: [
+                                  Container(
+                                      height: 100,
+                                      width: 100,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: const BorderRadius.all(
+                                            const Radius.circular(10),
+                                          ),
+                                          border: Border.all(
+                                            color: Colors.black,
+                                          )),
+                                      child: const Padding(
+                                        padding: EdgeInsets.only(top: 25.0),
+                                        child: const Icon(
+                                          MdiIcons.formatListBulletedType,
+                                          color: Colors.deepPurple,
+                                          size: 50,
+                                        ),
+                                      )),
+                                  Container(
+                                      height: 30,
+                                      width: 100,
+                                      decoration: const BoxDecoration(
+                                        color: Colors.deepPurple,
+                                        borderRadius: BorderRadius.all(
+                                            const Radius.circular(10)),
+                                      ),
+                                      child: const Padding(
+                                        padding: EdgeInsets.only(
+                                            top: 5.0, left: 20.0),
+                                        child: Text('View Jobs',
+                                            style: const TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 18)),
+                                      )),
+                                ]),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 10.0,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 10.0, left: 10.0),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, '/edit_job_list');
+                                },
+                                child: Stack(children: [
+                                  Container(
+                                      height: 100,
+                                      width: 100,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: const BorderRadius.all(
+                                            const Radius.circular(10),
+                                          ),
+                                          border: Border.all(
+                                            color: Colors.black,
+                                          )),
+                                      child: const Padding(
+                                        padding: EdgeInsets.only(top: 25.0),
+                                        child: const Icon(
+                                          MdiIcons.applicationEdit,
+                                          color: Colors.deepPurple,
+                                          size: 50,
+                                        ),
+                                      )),
+                                  Container(
+                                      height: 30,
+                                      width: 100,
+                                      decoration: const BoxDecoration(
+                                        color: Colors.deepPurple,
+                                        borderRadius: BorderRadius.all(
+                                            const Radius.circular(10)),
+                                      ),
+                                      child: const Padding(
+                                        padding: EdgeInsets.only(
+                                            top: 5.0, left: 20.0),
+                                        child: Text('Edit Jobs',
+                                            style: const TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 18)),
+                                      )),
+                                ]),
+                              ),
+                            ),
+                            const SizedBox(width: 40),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 10.0, right: 10.0),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, '/close_job_applications');
+                                },
+                                child: Stack(children: [
+                                  Container(
+                                      height: 100,
+                                      width: 100,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: const BorderRadius.all(
+                                            Radius.circular(10),
+                                          ),
+                                          border: Border.all(
+                                            color: Colors.black,
+                                          )),
+                                      child: const Padding(
+                                        padding: EdgeInsets.only(top: 25.0),
+                                        child: Icon(
+                                          MdiIcons.closeCircle,
+                                          color: Colors.deepPurple,
+                                          size: 50,
+                                        ),
+                                      )),
+                                  Container(
+                                      height: 30,
+                                      width: 100,
+                                      decoration: const BoxDecoration(
+                                        color: Colors.deepPurple,
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10)),
+                                      ),
+                                      child: const Padding(
+                                        padding: EdgeInsets.only(
+                                            top: 5.0, left: 12.0),
+                                        child: const Text('Close Jobs',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 18)),
+                                      )),
+                                ]),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ])),
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 50.0),
+                      child: SvgPicture.asset('assets/images/company.svg',
+                          height: 270, width: 280),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
@@ -1818,9 +2118,234 @@ class _HomeState extends State<Home> {
       //----------------------------------------------Progression----------------------------------//
       Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        children: const [
-          SizedBox(
-            height: 10,
+        children: [
+          Expanded(
+            flex: 1,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(20)),
+                  color: themecolor,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Expanded(
+                        flex: 1,
+                        child: Row(
+                          children: const [
+                            Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Text('More',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  )),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(top: 2.0),
+                              child: Icon(
+                                MdiIcons.more,
+                                size: 25,
+                                color: Colors.white,
+                              ),
+                            )
+                          ],
+                        )),
+                    Expanded(
+                      flex: 13,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          bottom: 20.0,
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(20)),
+                            color: Colors.purple.shade50,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: Column(children: [
+                              Expanded(
+                                flex: 1,
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.pushNamed(context, '/more_settings');
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: const BorderRadius.all(
+                                          const Radius.circular(10)),
+                                      border: Border.all(
+                                        color: Colors.deepPurple,
+                                      ),
+                                      color: Colors.white,
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: const [
+                                        Expanded(
+                                            flex: 2,
+                                            child: Padding(
+                                              padding:
+                                                  EdgeInsets.only(left: 15.0),
+                                              child: Text(
+                                                'Settings',
+                                                style: TextStyle(
+                                                  fontSize: 18,
+                                                ),
+                                              ),
+                                            )),
+                                        Spacer(flex: 3),
+                                        Expanded(
+                                            flex: 1,
+                                            child: Icon(
+                                              Icons.settings,
+                                              size: 35,
+                                              color: Colors.deepPurple,
+                                            )),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: InkWell(
+                                onTap: (){
+                                  Navigator.pushNamed(context, '/more_report');
+                                },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: const BorderRadius.all(
+                                          const Radius.circular(10)),
+                                      border: Border.all(
+                                        color: Colors.deepPurple,
+                                      ),
+                                      color: Colors.white,
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: const [
+                                        Expanded(
+                                            flex: 2,
+                                            child: Padding(
+                                              padding:
+                                                  EdgeInsets.only(left: 15.0),
+                                              child: Text(
+                                                'Report',
+                                                style: TextStyle(
+                                                  fontSize: 18,
+                                                ),
+                                              ),
+                                            )),
+                                        Spacer(flex: 3),
+                                        Expanded(
+                                            flex: 1,
+                                            child: Icon(Icons.report,
+                                                size: 35,
+                                                color: Colors.deepPurple)),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: const BorderRadius.all(
+                                        const Radius.circular(10)),
+                                    border: Border.all(
+                                      color: Colors.deepPurple,
+                                    ),
+                                    color: Colors.white,
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      Expanded(
+                                          flex: 2,
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsets.only(left: 15.0),
+                                            child: Text(
+                                              'Rate Us',
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                              ),
+                                            ),
+                                          )),
+                                      Spacer(flex: 3),
+                                      Expanded(
+                                          flex: 1,
+                                          child: Icon(Icons.star,
+                                              size: 35,
+                                              color: Colors.deepPurple)),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: const BorderRadius.all(
+                                        const Radius.circular(10)),
+                                    border: Border.all(
+                                      color: Colors.deepPurple,
+                                    ),
+                                    color: Colors.white,
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      Expanded(
+                                          flex: 2,
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsets.only(left: 15.0),
+                                            child: Text(
+                                              'Contact Us',
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                              ),
+                                            ),
+                                          )),
+                                      Spacer(flex: 3),
+                                      Expanded(
+                                          flex: 1,
+                                          child: Icon(MdiIcons.faceAgent,
+                                              size: 35,
+                                              color: Colors.deepPurple)),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              const Spacer(
+                                flex: 5,
+                              )
+                            ]),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
         ],
       ),
@@ -1893,6 +2418,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
-
-

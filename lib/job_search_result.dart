@@ -234,7 +234,7 @@ class _SearchResultState extends State<SearchResult> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: InkWell(
                                     onTap: (){
-
+                                      Navigator.pushReplacementNamed(context, '/view_application');
                                     },
                                     child: Container(
                                       height: 50,
