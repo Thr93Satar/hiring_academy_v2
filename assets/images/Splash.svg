@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="243.842" height="90.5" viewBox="0 0 243.842 90.5">
+  <defs>
+    <filter id="Academy" x="0" y="36.5" width="161" height="54" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Hiring" x="4" y="5.5" width="109" height="42" filterUnits="userSpaceOnUse">
+      <feOffset dx="-1" dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_682" x="153.5" y="0" width="23" height="89" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_658" x="173.544" y="3.828" width="70.298" height="82.918" filterUnits="userSpaceOnUse">
+      <feOffset dx="4" dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Component_377_1" data-name="Component 377 – 1" transform="translate(6.5 5.828)">
+    <g transform="matrix(1, 0, 0, 1, -6.5, -5.83)" filter="url(#Academy)">
+      <text id="Academy-2" data-name="Academy" transform="translate(80.5 69)" fill="#fff" font-size="32" font-family="Cabin-Bold, Cabin" font-weight="700"><tspan x="-72.672" y="0">ACADEMY</tspan></text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -6.5, -5.83)" filter="url(#Hiring)">
+      <text id="Hiring-2" data-name="Hiring" transform="translate(59.5 37)" fill="#fff" font-size="32" font-family="Cabin-Bold, Cabin" font-weight="700"><tspan x="-52.816" y="0">HIRING</tspan></text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -6.5, -5.83)" filter="url(#Rectangle_682)">
+      <rect id="Rectangle_682-2" data-name="Rectangle 682" width="5" height="71" rx="2" transform="translate(162.5 6)" fill="#483d67"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -6.5, -5.83)" filter="url(#Path_658)">
+      <path id="Path_658-2" data-name="Path 658" d="M70.976,21.069h6.719v7.554h4.434V3.18A3.179,3.179,0,0,0,78.95,0H47.571A3.181,3.181,0,0,0,44.39,3.18V67.739a3.18,3.18,0,0,0,3.181,3.18H58.86V50.248h8.745v-17.3A4.386,4.386,0,0,1,70.975,28.9V21.069h0Zm0-14.708h6.719V15.9H70.976ZM55.658,60H48.939V50.46h6.719V60Zm0-13.967H48.939V36.493h6.719v9.541Zm0-15.425H48.939v-9.54h6.719v9.54Zm0-14.708H48.939V6.36h6.719V15.9ZM66.863,46.034H60.146V36.493h6.717Zm0-15.425H60.146v-9.54h6.717Zm0-14.708H60.146V6.36h6.717ZM99.994,31.166H73.417c-1.488,0-2.694.8-2.694,1.782V69.135c0,.986,1.206,1.783,2.694,1.783h9.562V59.332h7.678V70.918h9.337c1.487,0,2.694-.8,2.694-1.783V32.949C102.688,31.964,101.481,31.166,99.994,31.166ZM80.265,64.8h-5.69V59.451h5.69Zm0-7.828h-5.69V51.622h5.69Zm0-8.645h-5.69V42.977h5.69Zm0-8.245h-5.69V34.731h5.69Zm9.493,16.891h-5.69V51.622h5.69Zm0-8.645h-5.69V42.977h5.69Zm0-8.245h-5.69V34.731h5.69Zm9.174,24.838h-5.69V59.57h5.69Zm0-7.948h-5.69V51.622h5.69Zm0-8.645h-5.69V42.977h5.69Zm0-8.245h-5.69V34.731h5.69Z" transform="translate(131.15 5.83)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

@@ -4,12 +4,12 @@ Builder(builder: (context){
                   Icons.account_circle,
                   size: 25,
                 ),
-                onPressed: () => Scaffold.of(context).openEndDrawer(),
+                onPressed: () => Scaffold.of(context).Drawer(),
               );
   }),
           ],
         ),
-        endDrawer: Column(
+        Drawer: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const SizedBox(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hiring_academy_v2/Notifications.dart';
 import 'package:hiring_academy_v2/Recover_account.dart';
 import 'package:hiring_academy_v2/close_job_applications.dart';
 import 'package:hiring_academy_v2/create_account.dart';
@@ -20,6 +21,7 @@ import 'package:hiring_academy_v2/password_reset.dart';
 import 'package:hiring_academy_v2/password_reset_2.dart';
 import 'package:hiring_academy_v2/registeration.dart';
 import 'package:hiring_academy_v2/report_section.dart';
+import 'package:hiring_academy_v2/splash.dart';
 import 'package:hiring_academy_v2/submitted_application.dart';
 import 'package:hiring_academy_v2/view_application.dart';
 import 'package:hiring_academy_v2/view_job_list.dart';
@@ -41,6 +43,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      home: Splash(),
       debugShowCheckedModeBanner: false,
       title: 'Hiring Academy',
       theme: ThemeData(
@@ -50,7 +53,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const Home(),
+        '/notifications':(context) => const Notifications(),
         '/login': (context) => const Login(),
         '/home_signed_in': (context) => const HomeSI(),
         '/news': (context) => const News(),
